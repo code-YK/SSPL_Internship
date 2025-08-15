@@ -1,0 +1,47 @@
+﻿Employee Management System
+________________
+
+
+Objective
+Practice core OOP concepts in Python: inheritance, method overriding, polymorphism, encapsulation, abstract classes, static and class methods, and package structuring.
+________________
+
+
+Task Description
+* Create an abstract Employee class with name, _employee_id, and __base_salary.
+* Implement Developer and Manager classes (single inheritance) overriding calculate_salary().
+* Create a CTO class using multiple inheritance (inherits from both). Use super() to handle salary calculation.
+* Create a Payroll class with:
+   * Class variable: company_name
+   * Class method: change_company_name()
+   * Static method: greet()
+   * Instance method: process_payroll() that loops through employees and prints salaries (demonstrating polymorphism).
+* Organize code into company/ package (employees.py, payroll.py).
+________________
+
+
+Expected Output Example
+Name: Ravi  
+Employee ID: 101  
+Base Salary: ₹50000  
+
+
+Name: Priya  
+Employee ID: 102  
+Base Salary: ₹70000  
+
+
+Name: Kiran  
+Employee ID: 103  
+Base Salary: ₹100000  
+
+
+Processing Payroll for TechCorp
+
+
+Ravi's Salary: ₹55000  
+Priya's Salary: ₹80000  
+Kiran's Salary: ₹120000  
+
+
+Changing company name to sculptsoft

@@ -1,0 +1,51 @@
+<<<<<<< HEAD
+Title: Write SQL Queries for Business Intelligence
+Objective:
+ Use an e-commerce database schema to generate business insights with SQL queries.
+ Dataset Schema:
+    -> customers (customer_id, name, email, created_at)
+
+    -> orders (order_id, customer_id, total_amount, order_date)
+
+    -> order_items (order_item_id, order_id, product_id, quantity, price)
+
+    -> products (product_id, name, category, price)
+
+
+Tasks:
+ ->List the top 10 customers by total spend.
+
+
+ ->Generate a report of daily revenue and order count for the last 30 days.
+
+
+ ->Identify most sold products in the last 3 months.
+
+
+ ->Show total revenue broken down by product category.
+=======
+Title: Write SQL Queries for Business Intelligence
+Objective:
+ Use an e-commerce database schema to generate business insights with SQL queries.
+ Dataset Schema:
+    -> customers (customer_id, name, email, created_at)
+
+    -> orders (order_id, customer_id, total_amount, order_date)
+
+    -> order_items (order_item_id, order_id, product_id, quantity, price)
+
+    -> products (product_id, name, category, price)
+
+
+Tasks:
+ ->List the top 10 customers by total spend.
+
+
+ ->Generate a report of daily revenue and order count for the last 30 days.
+
+
+ ->Identify most sold products in the last 3 months.
+
+
+ ->Show total revenue broken down by product category.
+>>>>>>> a095286 (Save local changes before pull)

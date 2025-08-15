@@ -1,0 +1,15 @@
+Aarav : Valid Score = 87
+Isha : Valid Score = 93
+Rohan : Invalid (non numeric marks)
+Meera : Invalid (marks out of range)
+: Invalid (missing name or marks)
+Priya : Valid Score = 66
+Kunal : Valid Score = 49
+Ananya : Valid Score = 89
+Vikram : Invalid (marks out of range)
+Dev : Valid Score = 91
+Simran: Invalid (missing name or marks)
+Aditya : Valid Score = 77
+Nisha : Valid Score = 100
+Rajat : Valid Score = 55
+Aanya : Invalid (non numeric marks)

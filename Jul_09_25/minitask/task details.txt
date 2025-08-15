@@ -1,0 +1,34 @@
+﻿Process Student Scores from a File
+
+
+
+
+Problem 
+* You are given a text file named students.txt that contains student names and their scores in the format:
+        Eg format:
+                John,85  
+Alice,92  
+Bob,abc  
+. . . 
+* Each line has two values: a student name and a score out of 100, separated by a comma.
+Task
+1. Read each line from students.txt using a loop.
+2. Validate the data:
+   * Name should not be empty.
+   * Score must be a number between 0 and 100.
+3. Handle invalid data using try-except blocks.
+4. Write the output to a new file results.txt in the format:
+   * E.g format <results.txt> file:
+      * <Name> : Valid score = <score>
+      * <Name> : Invalid score (non-numeric)
+      * <Name> : Invalid score (out of range)
+      * <Name> : Invalid score (missing name)
+5. At the end, print on the console:
+   * Total valid entries
+   * Total invalid entries
+
+
+
+
+NOTE: students.txt file attached present in the drive shared.
+________________

@@ -1,0 +1,15 @@
+Aarav,87
+Isha,93
+Rohan,abc
+Meera,102
+,75
+Priya,66
+Kunal,49
+Ananya,89
+Vikram,-5
+Dev,91
+Simran,
+Aditya,77
+Nisha,100
+Rajat,55
+Aanya,xyz

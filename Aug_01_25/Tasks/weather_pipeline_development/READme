@@ -1,0 +1,29 @@
+## 🌦️ Weather Data Pipeline (CLI-based)
+
+This is a CLI-based weather data pipeline project built in Python using Object-Oriented Programming (OOP) and modular design principles. 
+It fetches current weather data from the WeatherAPI for a given city, validates it using **Pydantic**, stores it in a **SQLite** database using **SQLAlchemy**, and allows the user to view stored weather data in tabular form.
+
+---
+
+## 📁 Project Structure
+weather_data_pipeline/
+├── main.py # CLI entry point
+├── weather_data.json # Cached JSON response (latest)
+│
+├── api/
+│ ├── client.py # Handles API interaction
+│ └── schemas.py # Pydantic data validation models
+│
+├── models/
+│ ├── base.py # SQLAlchemy base
+│ └── city_data.py # CityWeather DB table model
+│
+├── database/
+│ └── session.py # DB engine/session setup
+│
+├── data_processing/
+│ ├── insert_into_table.py # Inserts weather data into DB
+│ ├── get_user_input.py # Gets city name from user
+│ └── view_table.py # Displays DB records
+
+
