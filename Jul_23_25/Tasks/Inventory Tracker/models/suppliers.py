@@ -22,3 +22,6 @@ class Suppliers:
         print('supplier_id, name, phone')
         for supplier in suppliers:
             print(supplier)
+
+
+            
