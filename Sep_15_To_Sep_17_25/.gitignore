@@ -1,0 +1,22 @@
+# Ignore data folder
+Telecom_Customer_Churn_Prediction/data/
+
+# Python cache and environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# Model files
+Telecom_Customer_Churn_Prediction/models/*.pkl
+
+# User features file
+Telecom_Customer_Churn_Prediction/user_features.json
