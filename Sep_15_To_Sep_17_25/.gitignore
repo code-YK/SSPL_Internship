@@ -17,6 +17,3 @@ venv/
 
 # Model files
 Telecom_Customer_Churn_Prediction/models/*.pkl
-
-# User features file
-Telecom_Customer_Churn_Prediction/user_features.json
