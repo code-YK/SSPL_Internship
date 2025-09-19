@@ -1,0 +1,60 @@
+## Preprocessing Plan for Automotive Price Prediction
+
+### 1. Feature Cleaning & Dropping
+- **Drop redundant columns:**  
+  - `year` → Already represented by `vehicle_age`.  
+  - `mileage_per_year` → Can be derived from `mileage` & `vehicle_age` (avoid leakage).  
+
+- **Handle missing values:**  
+  - `accident_history` → Fill missing values with `"No Accident"`.  
+  - Other categorical columns → Fill with mode.  
+  - Numeric columns (if missing) → Fill with median.  
+
+---
+
+### 2. Feature Engineering
+- **Log Transform Target:**  
+  - Create `price_log = np.log1p(price)` to normalize skewed target distribution.  
+
+- **New Features:**  
+  - `price_per_hp = price / engine_hp` → Price-to-performance metric.  
+  - `is_luxury_brand = 1 if make ∈ [BMW, Mercedes, Audi, Lexus, ...] else 0` → Captures luxury premium.  
+
+- **Condition Encoding:**  
+  - Map `condition` to numeric: `Excellent=3, Good=2, Fair=1`.  
+
+---
+
+### 3. Categorical Encoding
+- **One-Hot Encode (Low Cardinality):**  
+  - `transmission`, `fuel_type`, `drivetrain`, `body_type`, `seller_type`  
+
+- **Target/Frequency Encode (High Cardinality):**  
+  - `make`, `model`, `trim`, `exterior_color`, `interior_color`  
+
+---
+
+### 4. Scaling
+- Apply **RobustScaler** to numerical features to minimize outlier impact:  
+  - `mileage`, `engine_hp`, `vehicle_age`, `brand_popularity`, `price_per_hp`
+
+---
+
+### 5. Outlier Handling
+- Keep outliers, as they represent genuine expensive vehicles.  
+- Scaling with `RobustScaler` will reduce their influence on model training.  
+
+---
+
+### 6. Train-Test Split
+- Perform **Stratified Train-Test Split** (e.g., using `vehicle_age` bins or `make`)  
+  - Ensures similar distribution of key features across train/test sets.  
+
+---
+
+### 7. Pipeline & Modeling
+- Wrap preprocessing in a single **scikit-learn Pipeline**:
+  - Imputation → Feature Engineering → Encoding → Scaling  
+- Keep model step flexible to swap between:
+  - Linear Regression, Decision Tree, RandomForest, XGBoost, LightGBM, CatBoost  
+- Evaluate on `price_log` target → Inverse transform predictions for final metrics.
