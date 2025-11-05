@@ -47,10 +47,9 @@ def increment_employee_salary(session, emp_id: int, percent: float):
     try:
         employee = session.query(Employee).filter(Employee.emp_id == emp_id).first()
         if employee:
-            increment_amount = employee.salary * (percent / 100)
-            employee.salary += increment_amount
+            employee.salary += employee.salary * (percent / 100)
             session.commit()
-            print(f"Incremented salary of Employee ID {emp_id} by {increment_amount}. New Salary: {employee.salary}")
+            print(f"Incremented salary of Employee ID {emp_id} by {percent}%. New Salary: {employee.salary}")
         else:
             print(f"No employee found with ID {emp_id}")
     except SQLAlchemyError as e:
