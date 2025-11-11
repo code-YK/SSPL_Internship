@@ -1,0 +1,5 @@
+2025-11-11 13:17:55,555 | DEBUG    | DemoApp | Debug details
+2025-11-11 13:17:55,559 | INFO     | DemoApp | Starting application
+2025-11-11 13:17:55,562 | WARNING  | DemoApp | Low disk space
+2025-11-11 13:17:55,566 | ERROR    | DemoApp | Something broke
+2025-11-11 13:17:55,571 | CRITICAL | DemoApp | System failure!

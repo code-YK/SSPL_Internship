@@ -1,0 +1,4 @@
+2025-11-11 12:00:32,234 | INFO | Started app
+2025-11-11 12:00:32,234 | WARNING | This is a warning
+2025-11-11 12:00:32,234 | ERROR | This is an error
+2025-11-11 12:32:13,000 | INFO | This is app-level logging
