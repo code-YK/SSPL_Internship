@@ -3,20 +3,20 @@
 from enum import Enum
 
 class GenderEnum(Enum):
-    male = "Male"
-    female = "Female"
+    male = "male"
+    female = "female"
 
 class LeaveStatusEnum(Enum):
-    pending = "Pending"
-    approved = "Approved"
-    rejected = "Rejected"
+    pending = "pending"
+    approved = "approved"
+    rejected = "rejected"
 
 class LeaveTypeEnum(Enum):
-    casual = "Casual"
-    sick = "Sick"
-    unpaid = "Unpaid"
-    annual = "Annual"
+    casual = "casual"
+    sick = "sick"
+    unpaid = "unpaid"
+    annual = "annual"
 
 class PayrollStatusEnum(Enum):
-    pending = "Pending"
-    paid = "Paid"
+    pending = "pending"
+    paid = "paid"
