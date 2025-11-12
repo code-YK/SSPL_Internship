@@ -52,24 +52,37 @@ def employee_menu():
         elif choice == '3':
             try:
                 emp_id = int(input("Enter employee ID to update: "))
-                name = input("Enter new name (leave blank to keep current): ")
-                email = input("Enter new email (leave blank to keep current): ")
-                gender = input("Enter new gender (leave blank to keep current): ").lower()
-                hire_date = input("Enter new hire date (YYYY-MM-DD, leave blank to keep current): ")
-                dept_id = input("Enter new department ID (leave blank to keep current): ")
-                salary = input("Enter new salary (leave blank to keep current): ")
 
-                emp_data = EmployeeUpdate(
-                    id=emp_id,
-                    name=name if name else None,
-                    email=email if email else None,
-                    gender=GenderEnum(gender) if gender else None,
-                    hire_date=date.fromisoformat(hire_date) if hire_date else None,
-                    dept_id=int(dept_id) if dept_id else None,
-                    salary=int(salary) if salary else None
-                )
+                # Build update data only with non-empty values
+                update_data = {}
 
-                emp = update_employee(db, emp_data)
+                name = input("Enter new name (leave blank to keep current): ").strip()
+                if name:
+                    update_data["name"] = name
+
+                email = input("Enter new email (leave blank to keep current): ").strip()
+                if email:
+                    update_data["email"] = email
+
+                gender = input("Enter new gender (M/F, leave blank to keep current): ").strip().lower()
+                if gender:
+                    update_data["gender"] = GenderEnum(gender)
+
+                hire_date = input("Enter new hire date (YYYY-MM-DD, leave blank to keep current): ").strip()
+                if hire_date:
+                    update_data["hire_date"] = date.fromisoformat(hire_date)
+
+                dept_id = input("Enter new department ID (leave blank to keep current): ").strip()
+                if dept_id:
+                    update_data["dept_id"] = int(dept_id)
+
+                salary = input("Enter new salary (leave blank to keep current): ").strip()
+                if salary:
+                    update_data["salary"] = int(salary)
+
+                emp_data = EmployeeUpdate(**update_data)
+
+                emp = update_employee(db, emp_id, emp_data)
             except Exception as e:
                 logger.error(f"Error updating employee: {e}")
                 raise
