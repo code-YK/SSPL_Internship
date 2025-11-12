@@ -61,7 +61,7 @@ def update_employee(db: Session, emp_id: int, update_data: EmployeeUpdate) -> Op
         return None
     try: 
         # Update fields
-        for field, value in update_data.dict(exclude_unset=True).items():
+        for field, value in update_data.model_dump(exclude_unset=True).items():
             setattr(employee, field, value)
 
         db.commit()
