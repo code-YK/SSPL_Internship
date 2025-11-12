@@ -10,7 +10,7 @@ class EmployeeBase(BaseModel):
     salary : int = Field(..., gt=0, description="Salary must be a positive integer")
 
     class Config:
-        orm_mode = True  # Enable ORM mode to work with SQLAlchemy models
+        from_attributes = True  # Enable ORM mode to work with SQLAlchemy models
 
 class EmployeeCreate(EmployeeBase):
     dept_id : int = Field(..., gt=0, description="It must be a valid department ID")

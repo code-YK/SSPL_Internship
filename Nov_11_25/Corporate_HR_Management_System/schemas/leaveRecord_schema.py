@@ -1,16 +1,23 @@
-from pydantic import BaseModel, Field
+from typing import Self
+from pydantic import BaseModel, Field, model_validator
 from datetime import date
 from config.enum import LeaveStatusEnum, LeaveTypeEnum
 
 class LeaveRecordBase(BaseModel):
     start_date: date = Field(..., description="The start date of the leave")
-    end_date: date = Field(..., gt=start_date, description="The end date of the leave")
+    end_date: date = Field(..., description="The end date of the leave")
     reason: str = Field(..., description="The reason for the leave")
-    status: LeaveStatusEnum = Field(LeaveStatusEnum.pending, description="The status of the leave request (pending, approved, rejected)")
     leave_type: LeaveTypeEnum = Field(LeaveTypeEnum.sick, description="The type of leave (casual, sick, annual, unpaid)")
 
+    @model_validator(mode="after")
+    def check_dates(self) -> Self:
+        # Validate that end_date occurs after start_date.
+        if self.end_date <= self.start_date:
+            raise ValueError("end_date must be after start_date")
+        return self
+    
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class LeaveRecordCreate(LeaveRecordBase):
     emp_id: int = Field(..., description="The ID of the employee requesting leave")

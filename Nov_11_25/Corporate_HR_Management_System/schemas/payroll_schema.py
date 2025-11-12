@@ -11,7 +11,7 @@ class PayrollBase(BaseModel):
     pay_date : date = Field(..., description="Pay date")
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class PayrollCreate(PayrollBase):
     emp_id : int = Field(..., description="The ID must refer to a valid employee")

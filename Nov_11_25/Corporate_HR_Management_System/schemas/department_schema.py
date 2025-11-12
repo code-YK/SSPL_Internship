@@ -5,7 +5,7 @@ class DepartmentBase(BaseModel):
     budget: float = Field(..., gt=0, description="Budget must be a positive number")
 
     class Config:
-        orm_mode = True # Enable ORM mode to work with SQLAlchemy models
+        from_attributes = True # Enable ORM mode to work with SQLAlchemy models
 
 class DepartmentCreate(DepartmentBase):
     manager_id: int = Field(..., gt=0, description="Manager ID must be a valid employee ID")
