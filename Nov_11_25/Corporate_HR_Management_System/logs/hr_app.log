@@ -1,0 +1,72 @@
+2025-11-12 11:51:01,565 || INFO || __main__ || Initializing database and inserting seed data...
+2025-11-12 11:51:01,566 || INFO || __main__ || Initializing database...
+2025-11-12 11:51:01,593 || INFO || __main__ || Seeding data...
+2025-11-12 11:51:01,619 || INFO || __main__ || Seed data inserted successfully.
+2025-11-12 14:16:25,956 || INFO || crud.department_ops || Departments retrieved successfully.
+2025-11-12 14:16:25,958 || INFO || crud.department_ops || Displayed 4 departments.
+2025-11-12 14:16:48,657 || INFO || crud.employee_ops || Employees retrieved successfully.
+2025-11-12 14:16:48,659 || INFO || crud.employee_ops || Displayed 6 employees.
+2025-11-12 14:17:06,603 || ERROR || cli.cli_employee || Error updating employee: invalid literal for int() with base 10: ''
+2025-11-12 14:18:18,085 || ERROR || cli.cli_employee || Error updating employee: 'male' is not a valid GenderEnum
+2025-11-12 14:20:09,316 || INFO || crud.payroll_ops || Payroll records for employee id 1 retrieved successfully.
+2025-11-12 14:20:09,317 || INFO || crud.payroll_ops || Displayed 1 payroll records for employee id 1.
+2025-11-12 14:20:14,106 || INFO || crud.payroll_ops || Payroll records retrieved successfully.
+2025-11-12 14:20:14,110 || INFO || crud.payroll_ops || Displayed 5 payroll records.
+2025-11-12 14:20:40,972 || INFO || crud.payroll_ops || Updated payroll status for id 5 to paid.
+2025-11-12 15:12:25,001 || INFO || crud.department_ops || Departments retrieved successfully.
+2025-11-12 15:12:25,003 || INFO || crud.department_ops || Displayed 4 departments.
+2025-11-12 15:14:11,266 || INFO || crud.department_ops || Added new department with id 5.
+2025-11-12 15:14:21,368 || INFO || crud.department_ops || Departments retrieved successfully.
+2025-11-12 15:14:21,370 || INFO || crud.department_ops || Displayed 5 departments.
+2025-11-12 15:15:31,875 || INFO || crud.employee_ops || Added new employee with id 7.
+2025-11-12 15:15:40,293 || INFO || crud.employee_ops || Employees retrieved successfully.
+2025-11-12 15:15:40,295 || INFO || crud.employee_ops || Displayed 7 employees.
+2025-11-12 15:16:31,465 || ERROR || cli.cli_employee || Error updating employee: update_employee() missing 1 required positional argument: 'update_data'
+2025-11-12 15:19:46,978 || ERROR || crud.employee_ops || Error updating employee with id 7: (sqlite3.IntegrityError) NOT NULL constraint failed: employees.name
+[SQL: UPDATE employees SET name=?, email=?, gender=?, hire_date=?, dept_id=?, salary=? WHERE employees.emp_id = ?]
+[parameters: (None, None, None, None, None, 20000, 7)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-11-12 15:19:46,978 || ERROR || cli.cli_employee || Error updating employee: (sqlite3.IntegrityError) NOT NULL constraint failed: employees.name
+[SQL: UPDATE employees SET name=?, email=?, gender=?, hire_date=?, dept_id=?, salary=? WHERE employees.emp_id = ?]
+[parameters: (None, None, None, None, None, 20000, 7)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-11-12 15:21:30,239 || ERROR || crud.employee_ops || Error updating employee with id 7: (sqlite3.IntegrityError) NOT NULL constraint failed: employees.name
+[SQL: UPDATE employees SET name=?, email=?, gender=?, hire_date=?, dept_id=?, salary=? WHERE employees.emp_id = ?]
+[parameters: (None, None, None, None, None, 20000, 7)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-11-12 15:21:30,240 || ERROR || cli.cli_employee || Error updating employee: (sqlite3.IntegrityError) NOT NULL constraint failed: employees.name
+[SQL: UPDATE employees SET name=?, email=?, gender=?, hire_date=?, dept_id=?, salary=? WHERE employees.emp_id = ?]
+[parameters: (None, None, None, None, None, 20000, 7)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-11-12 15:29:51,379 || INFO || crud.employee_ops || Updated employee with id 7.
+2025-11-12 15:30:20,917 || INFO || crud.leaveRecord_ops || Leave records retrieved successfully.
+2025-11-12 15:30:20,919 || INFO || crud.leaveRecord_ops || Displayed 3 leave records.
+2025-11-12 15:32:00,913 || ERROR || cli.cli_leaveRecord || Error adding leave record: 'LeaveRecordCreate' object has no attribute 'status'
+2025-11-12 15:35:45,835 || INFO || crud.leaveRecord_ops || Added new leave record with id 4.
+2025-11-12 15:35:52,190 || INFO || crud.leaveRecord_ops || Leave records retrieved successfully.
+2025-11-12 15:35:52,192 || INFO || crud.leaveRecord_ops || Displayed 4 leave records.
+2025-11-12 15:36:17,894 || INFO || crud.leaveRecord_ops || Leave ID 4 updated to status rejected, approved by manager ID 5.
+2025-11-12 15:36:28,392 || INFO || crud.leaveRecord_ops || Leave records for employee id 7 retrieved successfully.
+2025-11-12 15:36:28,393 || INFO || crud.leaveRecord_ops || Displayed 1 leave records for employee id 7.
+2025-11-12 15:36:37,512 || INFO || crud.payroll_ops || Payroll records retrieved successfully.
+2025-11-12 15:36:37,515 || INFO || crud.payroll_ops || Displayed 5 payroll records.
+2025-11-12 15:36:50,019 || WARNING || crud.payroll_ops || No payroll records found for employee id 7.
+2025-11-12 15:36:50,019 || INFO || crud.payroll_ops || Payroll records for employee id 7 retrieved successfully.
+2025-11-12 15:36:50,020 || INFO || crud.payroll_ops || Displayed 0 payroll records for employee id 7.
+2025-11-12 15:37:04,815 || INFO || crud.payroll_ops || Payroll records for employee id 3 retrieved successfully.
+2025-11-12 15:37:04,817 || INFO || crud.payroll_ops || Displayed 1 payroll records for employee id 3.
+2025-11-12 15:37:27,762 || INFO || crud.payroll_ops || Generated new payroll record with id 6 for employee id 7.
+2025-11-12 15:37:38,279 || INFO || crud.payroll_ops || Payroll records retrieved successfully.
+2025-11-12 15:37:38,281 || INFO || crud.payroll_ops || Displayed 6 payroll records.
+2025-11-12 15:38:03,921 || INFO || crud.payroll_ops || Updated payroll status for id 6 to paid.
+2025-11-12 15:38:11,589 || INFO || crud.payroll_ops || Payroll records retrieved successfully.
+2025-11-12 15:38:11,591 || INFO || crud.payroll_ops || Displayed 6 payroll records.
+2025-11-12 15:38:28,947 || INFO || crud.leaveRecord_ops || Leave records retrieved successfully.
+2025-11-12 15:38:28,949 || INFO || crud.leaveRecord_ops || Displayed 4 leave records.
+2025-11-12 15:38:41,742 || INFO || crud.leaveRecord_ops || Leave ID 4 updated to status approved, approved by manager ID 5.
+2025-11-12 15:39:02,897 || ERROR || cli.cli_leaveRecord || Error adding leave record: '' is not a valid LeaveTypeEnum
+2025-11-12 15:39:17,338 || INFO || crud.leaveRecord_ops || Leave records retrieved successfully.
+2025-11-12 15:39:17,341 || INFO || crud.leaveRecord_ops || Displayed 4 leave records.
+2025-11-12 15:39:54,065 || INFO || crud.payroll_ops || Generated new payroll record with id 7 for employee id 7.
+2025-11-12 15:39:56,935 || INFO || crud.payroll_ops || Payroll records retrieved successfully.
+2025-11-12 15:39:56,937 || INFO || crud.payroll_ops || Displayed 7 payroll records.
