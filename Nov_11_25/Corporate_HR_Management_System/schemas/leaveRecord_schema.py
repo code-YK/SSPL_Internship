@@ -21,6 +21,7 @@ class LeaveRecordBase(BaseModel):
 
 class LeaveRecordCreate(LeaveRecordBase):
     emp_id: int = Field(..., description="The ID of the employee requesting leave")
+    status: LeaveStatusEnum = Field(LeaveStatusEnum.pending, description="The status of the leave request")
     approved_by: int | None = Field(None, description="The ID of the approver, if applicable")
 
 class LeaveRecordRead(LeaveRecordBase):
