@@ -7,14 +7,17 @@ class Package(Base):
     __tablename__ = 'packages'
 
     id = Column(Integer, primary_key=True, index=True)
-    recipent_name = Column(String, nullable=False)
+    recipient_name = Column(String, nullable=False)
     address = Column(String, nullable=False)
     created_at = Column(DateTime, nullable=False)
     updated_at = Column(DateTime, nullable=False)
     depot_id = Column(Integer, ForeignKey('depots.id'))
-    tracking_id = Column(Integer, ForeignKey('trackings.id'), nullable=True)
+    tracking_number = Column(String, unique=True, nullable=False)
     status = Column(Enum(packageStatus), default=packageStatus.CREATED, nullable=False)
     
     # Relationships (1 to Many)
     depot = relationship("Depot", back_populates="packages")
-    tracking = relationship("Tracking", back_populates="packages")
+    tracking_events = relationship("TrackingEvent", back_populates="package")
+
+    # Relationships (1 to 1)
+    pickup_request = relationship("PickupRequest", back_populates="package", uselist=False)
