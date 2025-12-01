@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Depends, HTTPException
 from config import get_db, setup_logger
 from sqlalchemy.orm import Session
-from services import DepotService, TransactionService, TrackingEventService
+from services import DepotService, TransactionService, TrackingEventService, DriverService
 from integrations import CourierClient
-from schema import DepotCreate, PackagePickupCreate
+from schema import DepotCreate, PackagePickupCreate, DriverCreate
 from datetime import datetime
 from models import Package
 
@@ -22,6 +22,24 @@ def create_depot(depot: DepotCreate, db: Session = Depends(get_db)):
     except Exception as e:
         logger.error(f"Failed to create depot: {e}")
         return {"error": "Failed to create depot"}
+
+
+@app.post("/drivers/")
+def create_driver(driver: DriverCreate, db: Session = Depends(get_db)):
+    # API endpoint to create a new driver
+    logger.info("Received request to create a new driver.")
+    # Check if depot exists
+    depot = DepotService.get_depot_by_id(db, driver.depot_id)
+    if depot is None:
+        raise HTTPException(status_code=404, detail="Depot not found")
+    try:
+        new_driver = DriverService.create_driver(db, driver)
+        logger.info(f"Driver created successfully with ID: {new_driver.id}")
+        return new_driver
+    except Exception as e:
+        logger.error(f"Failed to create driver: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.post("/depots/{depot_id}/packages/")
 def create_package_with_pickup(
@@ -44,7 +62,7 @@ def create_package_with_pickup(
 
     except Exception as e:
         logger.error(f"Failed to create package + pickup: {e}")
-        return {"error": "Failed to create package + pickup request"}
+        return {"error": str(e)}
 
 @app.get("/packages/{package_id}/tracking_events/")
 def get_package_tracking_events(package_id: int, db: Session = Depends(get_db)) -> dict:
