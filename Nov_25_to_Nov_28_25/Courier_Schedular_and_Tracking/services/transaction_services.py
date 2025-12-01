@@ -1,8 +1,8 @@
-from sqlalchemy import Session
+from sqlalchemy.orm import Session
 from models import Driver, Package, PickupRequest, Depot
 from schema import PackageCreate
 from datetime import datetime, timezone
-from config import setup_logger
+from config import setup_logger, pickupStatus
 
 logger = setup_logger(__name__)
 
@@ -32,7 +32,7 @@ class TransactionService:
             new_pickup_request = PickupRequest(
                 package_id=new_package.id,
                 requested_at=datetime.now(timezone.utc),
-                status="pending",
+                status=pickupStatus.PENDING,
             )
 
             # assign driver and scheduled time
