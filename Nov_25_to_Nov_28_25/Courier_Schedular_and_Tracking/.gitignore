@@ -2,4 +2,4 @@ logs/
 notes.txt
 venv/
 *.pyc
-
+database/
