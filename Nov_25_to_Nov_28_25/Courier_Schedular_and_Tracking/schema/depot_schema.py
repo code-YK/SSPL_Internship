@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from pydantic.datetime_parse import datetime
+from datetime import datetime
 
 class DepotCreate(BaseModel):
     name: str = Field(..., alias="name")
@@ -7,7 +7,7 @@ class DepotCreate(BaseModel):
     is_active: bool = Field(..., alias="is_active")
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class DepotRead(DepotCreate):
     id: int = Field(..., alias="id")

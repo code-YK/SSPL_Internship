@@ -7,7 +7,7 @@ class DriverCreate(BaseModel):
     is_active: bool = Field(True, alias="is_active")
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class DriverRead(DriverCreate):
     id: int = Field(..., alias="id")

@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from pydantic.datetime_parse import datetime
+from datetime import datetime
 
 class TrackingEventCreate(BaseModel):
     package_id: int = Field(..., alias="package_id")
@@ -8,7 +8,7 @@ class TrackingEventCreate(BaseModel):
     description: str = Field(..., alias="description")
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class TrackingEventRead(TrackingEventCreate):
     id: int = Field(..., alias="id")
