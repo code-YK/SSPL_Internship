@@ -1,8 +1,9 @@
-📦 Courier Scheduler & Tracking System
+# 📦 Courier Scheduler & Tracking System
 
-A lightweight backend system built using FastAPI, SQLAlchemy, and Pydantic, simulating a real-world courier workflow including depots, drivers, packages, pickup scheduling, status updates, and tracking sync using a mock external API.
+`A lightweight backend system built using FastAPI, SQLAlchemy, and Pydantic, simulating a real-world courier workflow including depots, drivers, packages, pickup scheduling, status updates, and tracking sync using a mock external API.`
 
-🚀 Features
+## 🚀 Features
+
     - ✔ Depot Management
         - Add, read, and manage courier depots.
     - ✔ Driver Management
@@ -19,7 +20,8 @@ A lightweight backend system built using FastAPI, SQLAlchemy, and Pydantic, simu
         - A fully automated demo.py that runs the full lifecycle.
 
 
-🗄 Database
+## 🗄 Database
+
     - Uses SQLite
     - SQLAlchemy ORM models include:
         - Depot → Packages (1:M)
@@ -28,7 +30,7 @@ A lightweight backend system built using FastAPI, SQLAlchemy, and Pydantic, simu
         - Package → TrackingEvents (1:M)
         - Migration occurs automatically on first run.
 
-🏗 Project Structure
+## 🏗 Project Structure
 
     Courier_Schedular_and_Tracking/
     │
@@ -78,7 +80,8 @@ A lightweight backend system built using FastAPI, SQLAlchemy, and Pydantic, simu
     └── README.md
 
 
-▶ Running the Application
+## ▶ Running the Application
+
     - 1️⃣ Install dependencies:
         >> pip install -r requirements.txt
     - 2️⃣ Seed the Database (Important)
@@ -99,7 +102,8 @@ A lightweight backend system built using FastAPI, SQLAlchemy, and Pydantic, simu
                 >> python demo.py
             - Logs + nicely formatted output will appear.
 
-🌐 External Courier API (Mock)
+## 🌐 External Courier API (Mock)
+
 - The system uses httpbin.org to simulate:
     - Pickup creation (POST /post)
     - Status push (PUT /put)
@@ -107,14 +111,16 @@ A lightweight backend system built using FastAPI, SQLAlchemy, and Pydantic, simu
 - Located in:
     - integrations/courier_client.py
 
-🛡 Error Handling
+## 🛡 Error Handling
+
 - Pydantic request validation
 - roper error responses
 - Database transaction rollback
 - Full logging on every failure
 
 
-🧾 Logging
+## 🧾 Logging
+
 - Logs are saved to the /logs folder.
 - Every major action (API, service, integration, demo) is logged with:
     - Timestamp
@@ -122,7 +128,8 @@ A lightweight backend system built using FastAPI, SQLAlchemy, and Pydantic, simu
     - Message
     - Module
 
-📄 License
+## 📄 License
+
 This project is for educational and internship learning purposes.
 Feel free to extend and customize.
 
