@@ -75,19 +75,16 @@ def run_demo():
         logger.error("Failed to create package + pickup — demo exiting.")
         return
 
-    # 4. PUSH STATUS UPDATE
+    # 4. PUSH STATUS UPDATE TO REMOTE COURIER
     push_res = requests.post(
-        f"{BASE_URL}/packages/{pickup_id}/push_status/",
-        json={"package_status": "in_transit"}
+        f"{BASE_URL}/packages/{pickup_id}/push_status/?package_status=in_transit"
     )
     pretty_print("Status Pushed to Courier", push_res)
 
-    # 5. SYNC TRACKING
+    # 5. SYNC TRACKING FROM REMOTE COURIER
     sync_res = requests.post(f"{BASE_URL}/sync/tracking_info/")
     pretty_print("Synced Tracking from Remote Courier", sync_res)
-
-    logger.info("Demo Script Completed Successfully")
-
+    
 
 if __name__ == "__main__":
     run_demo()
