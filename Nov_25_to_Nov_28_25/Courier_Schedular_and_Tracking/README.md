@@ -3,20 +3,20 @@
 A lightweight backend system built using FastAPI, SQLAlchemy, and Pydantic, simulating a real-world courier workflow including depots, drivers, packages, pickup scheduling, status updates, and tracking sync using a mock external API.
 
 🚀 Features
-✔ Depot Management
-    Add, read, and manage courier depots.
-✔ Driver Management
-    Create drivers linked to a depot.
-✔ Package Management
-    Create packages, assign drivers, schedule pickups.
-✔ Pickup Requests
-    Automatically generated during a transaction.
-✔ Tracking Events
-    Simulated remote tracking sync via httpbin.
-✔ Logging
-    All actions logged with timestamps under /logs.
-✔ Demo Script
-    A fully automated demo.py that runs the full lifecycle.
+    ✔ Depot Management
+        Add, read, and manage courier depots.
+    ✔ Driver Management
+        Create drivers linked to a depot.
+    ✔ Package Management
+        Create packages, assign drivers, schedule pickups.
+    ✔ Pickup Requests
+        Automatically generated during a transaction.
+    ✔ Tracking Events
+        Simulated remote tracking sync via httpbin.
+    ✔ Logging
+        All actions logged with timestamps under /logs.
+    ✔ Demo Script
+        A fully automated demo.py that runs the full lifecycle.
 
 
 🗄 Database
@@ -79,25 +79,25 @@ A lightweight backend system built using FastAPI, SQLAlchemy, and Pydantic, simu
 
 
 ▶ Running the Application
-1️⃣ Install dependencies:
-    >> pip install -r requirements.txt
-2️⃣ Seed the Database (Important)
-    - Before running the app or demo, populate the DB with sample data.
-    >> python -m services.seed_data
-3️⃣ Start FastAPI Server
-    >> uvicorn main:app --reload
-    - API Documentation
-        Swagger UI → http://127.0.0.1:8000/docs
-4️⃣ Run the Demo Script
-    - This script performs full workflow automation:
-        - Create a depot
-        - Create a driver
-        - Create a package + pickup (transaction)
-        - Push package status
-        - Sync tracking info
-        - Run:
-            >> python demo.py
-        - Logs + nicely formatted output will appear.
+    1️⃣ Install dependencies:
+        >> pip install -r requirements.txt
+    2️⃣ Seed the Database (Important)
+        - Before running the app or demo, populate the DB with sample data.
+        >> python -m services.seed_data
+    3️⃣ Start FastAPI Server
+        >> uvicorn main:app --reload
+        - API Documentation
+            Swagger UI → http://127.0.0.1:8000/docs
+    4️⃣ Run the Demo Script
+        - This script performs full workflow automation:
+            - Create a depot
+            - Create a driver
+            - Create a package + pickup (transaction)
+            - Push package status
+            - Sync tracking info
+            - Run:
+                >> python demo.py
+            - Logs + nicely formatted output will appear.
 
 🌐 External Courier API (Mock)
 - The system uses httpbin.org to simulate:
