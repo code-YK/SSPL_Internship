@@ -1,0 +1,9 @@
+langgraph
+langchain
+ipython
+langchain_community
+langchain_groq
+dotenv
+typing
+chromadb
+langchain_chroma
