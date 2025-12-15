@@ -1,0 +1,3 @@
+My name is Kuldeep.
+I am a 3rd year BTech student.
+I work with Python and Machine Learning.
