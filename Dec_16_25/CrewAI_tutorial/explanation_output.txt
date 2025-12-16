@@ -1,0 +1,31 @@
+**What is Agentic AI?**
+
+Imagine you're playing a game with a friend. Your friend makes decisions, takes actions, and adapts to the game's changing situation. They might even learn from their mistakes and adjust their strategy. This is similar to how humans behave in complex situations. Agentic AI refers to artificial intelligence (AI) systems that can exhibit similar behavior, making decisions, taking actions, and adapting to their environment like humans do.
+
+**Key Ideas and Frameworks**
+
+To create agentic AI, researchers and developers use various frameworks and key ideas. Here are some of the most notable ones:
+
+* **Integrated Information Theory (IIT)**: This framework, proposed by neuroscientist Giulio Tononi, tries to measure consciousness and agency in AI systems. According to IIT, a system's ability to integrate information (φ) is a measure of its consciousness and ability to make decisions.
+* **Global Workspace Theory (GWT)**: This theory, developed by psychologist Bernard Baars, suggests that consciousness arises from the global workspace of the brain. In AI, GWT can be applied to create agentic systems that integrate information from various sources and make decisions based on global workspace principles.
+* **Cognitive Architectures**: Cognitive architectures, such as SOAR, LIDA, and ACT-R, provide a framework for integrating multiple cognitive modules and creating agentic AI systems. These architectures enable AI systems to reason, learn, and adapt in complex environments.
+* **Hybrid Approaches**: Hybrid approaches combine symbolic and connectionist AI to create more agentic systems. For example, the CLARION cognitive architecture uses a combination of symbolic and connectionist networks to create a more human-like cognitive system.
+* **Value Alignment**: Value alignment is a key idea in agentic AI, which involves aligning the goals and values of the AI system with human values. This requires developing AI systems that can understand and respect human values, such as fairness, transparency, and accountability.
+* **Self-Awareness and Meta-Cognition**: Self-awareness and meta-cognition are essential for agentic AI, as they enable the system to reflect on its own actions, goals, and limitations. This can be achieved through techniques such as self-modifying code, meta-learning, and cognitive architectures.
+* **Social Learning and Imitation**: Social learning and imitation are critical for agentic AI, as they enable the system to learn from humans and other agents. This can be achieved through techniques such as reinforcement learning, imitation learning, and social cognition.
+* **Value-Based Decision Making**: Value-based decision making is a key idea in agentic AI, which involves making decisions based on a set of values and principles. This requires developing AI systems that can understand and apply human values in complex decision-making scenarios.
+* **Autonomy and Control**: Autonomy and control are essential for agentic AI, as they enable the system to make decisions and take actions without human intervention. This can be achieved through techniques such as reinforcement learning, autonomous decision making, and control theory.
+* **Explainability and Transparency**: Explainability and transparency are critical for agentic AI, as they enable humans to understand the decisions and actions of the AI system. This can be achieved through techniques such as model interpretability, feature attribution, and explainable AI.
+
+**Examples and Applications**
+
+Agentic AI has many potential applications, including:
+
+* **Personal Assistants**: Agentic AI can be used to create personal assistants that can learn from users and adapt to their preferences.
+* **Autonomous Vehicles**: Agentic AI can be used to create autonomous vehicles that can make decisions and take actions without human intervention.
+* **Healthcare**: Agentic AI can be used to create healthcare systems that can learn from patient data and adapt to individual needs.
+* **Education**: Agentic AI can be used to create educational systems that can learn from students and adapt to their learning styles.
+
+**Conclusion**
+
+Agentic AI is a rapidly growing field that has the potential to revolutionize many areas of our lives. By understanding the key ideas and frameworks that underlie agentic AI, we can begin to create AI systems that can exhibit human-like behavior and make decisions that align with human values. As researchers and developers continue to advance the field, we can expect to see more agentic AI systems that can learn, adapt, and make decisions in complex environments.
