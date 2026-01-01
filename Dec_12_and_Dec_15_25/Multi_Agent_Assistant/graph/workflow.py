@@ -31,3 +31,5 @@ def build_graph():
     graph.add_edge("memory_keeper", END)
 
     return graph.compile()
+
+agent = build_graph()
