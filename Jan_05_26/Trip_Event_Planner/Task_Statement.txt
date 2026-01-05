@@ -1,0 +1,75 @@
+Problem Statement (Updated for Changes)
+Build a smart chatbot that helps users plan a trip that includes a special event (e.g., birthday party, anniversary dinner, team-building activity, small wedding).
+The chatbot should:
+
+Understand user intent (trip destination, dates, budget, event type).
+Collaborate using multiple specialized agents.
+Remember user preferences and previous decisions across the conversation (using memory).
+Include human-in-the-loop after each agent: present results, ask a few confirmation questions and allow changes before proceeding.
+Specifically: After Research, confirm location/details; after Planner, confirm itinerary with questions on changes; after Pricing, confirm costs/risks.
+Output structured data using Pydantic models.
+
+Key Requirements to Include in the POC
+LangGraph for multi-agent workflow (stateful graph with conditional edges for loops).
+At least 3 specialized agents (Research, Planner, Pricing).
+Pydantic schemas for structured inputs/outputs.
+Memory (conversation history via messages + custom state memory for trip/event details).
+Human-in-the-Loop (interrupt after each agent for approval/changes, using a node that presents info and asks 3-4 specific questions; simulate with input() for POC).
+Simple LLM calls (use Groq, OpenAI, or Anthropic – e.g., via LangChain).
+For Research Agent: Prioritize web search (use LangChain tools like TavilySearchResults or simulate with mock web data in POC).
+
+Agents in the System (3 Agents, Each with Human-in-the-Loop)
+Research Agent
+Task: Gather information about destinations, venues, activities, weather, costs (priority: use web search for real data, e.g., via tool calls to search engines).
+Tools: Web search (e.g., integrate TavilySearchResults or mock data in postgres database).
+Human-in-the-Loop: After gathering, present summary (e.g., "Destination: Bali, Weather: Sunny 28°C, Venues: Beach resorts at $200/night"). Ask 3-4 questions like:
+Is this destination suitable, or do you want alternatives?
+Confirm the dates—any adjustments?
+Does the weather/venue info match your needs?
+Any specific preferences to add (e.g., vegetarian options)?
+If changes, loop back or update state.
+Planner Agent
+Task: Build the day-by-day itinerary and event schedule, combining travel + event logistics based on research.
+Human-in-the-Loop: After building, present the itinerary (e.g., "Day 1: Arrival and beach walk; Day 5: Anniversary dinner at venue X"). Ask 3-4 questions like:
+Does the overall schedule look good, or shift any days?
+Any activities to add/remove (e.g., more relaxation time)?
+Confirm event timing—too early/late?
+Budget for activities okay so far?
+If changes, send feedback back to Planner for revisions.
+Pricing Agent 
+Task: Calculate total prices, highlight costs/risks (e.g., breakdowns for flights, hotels, event, contingencies), and prepare for final review.
+Input: Uses full plan from previous agents.
+Output: Builds full_plan with total_estimated_cost.
+Tools: Simple calculations or web search for current prices (mock in POC).
+Human-in-the-Loop: After calculating, present the priced plan (e.g., "Total: $4500; Breakdown: Flights $1000, Event $500"). Ask 3 questions like:
+Is the total budget acceptable, or need cuts?
+Any high-risk costs to adjust (e.g., variable weather fees)?
+Confirm overall—approve or edit?
+If approved, end; else, loop back to Planner or Research as needed.
+
+for each agent make tools need to use that agent, implement memory and human in the loop concept 
+
+Structure:
+trip-event-planner/
+├── main.py                  # Entry point to run the chatbot
+├── graph.py                 # Builds the full LangGraph workflow
+├── nodes/
+│   ├── research.py          # Research agent logic
+│   ├── planner.py           # Planner agent logic
+│   ├── pricing.py           # Pricing agent logic
+│   └── __init__.py
+├── tools/
+│   ├── research.py            # tools used for research agent
+│   ├── planner.py        # tools used for Planner agent
+│   └── pricing.py         tools used for Pricing agent
+├── states/
+│   ├── main_state.py        # Main AgentState definition
+│   ├── schemas/             # All Pydantic models go here (one file per model or combined)
+│   │   ├── file1.py
+│   │   ├── file2.py
+│   └── __init__.py
+├── utils/
+│   ├── review.py            # Human-in-the-loop review logic and questions
+│   ├── prompts.py           # Prompts used by agents
+├── requirements.txt
+└── README.md
