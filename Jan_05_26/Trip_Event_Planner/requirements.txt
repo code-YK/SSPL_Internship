@@ -1,0 +1,18 @@
+# Core LLM & Agent Frameworks
+langgraph
+langchain
+langchain-core
+langchain-groq
+
+# Data Validation & State
+pydantic
+pydantic-settings
+
+# Environment & Configuration 
+python-dotenv
+
+# Web Search (Research Agent) 
+tavily-python
+
+# Utilities 
+typing-extensions
