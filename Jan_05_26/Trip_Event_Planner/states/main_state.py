@@ -2,7 +2,8 @@ from typing import TypedDict, List, Optional
 from typing_extensions import Annotated
 
 from langchain_core.messages import BaseMessage
-from langgraph.graph.message import add_messages
+
+from utils import rolling_message_reducer as add_messages
 
 from states.schemas import *
 
@@ -29,3 +30,4 @@ class TripEventState(TypedDict, total=False):
     # Control Flags
     current_stage: Optional[str]
     final_approved: bool
+    final_trip_plan: Optional[FinalTripPlanModel]
