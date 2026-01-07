@@ -5,6 +5,7 @@ from states.schemas.pricing import PricingModel
 from states.schemas.review import ReviewDecisionModel
 from states.schemas.final_output import FinalTripPlanModel
 from states.schemas.presentation import UserFriendlyTripPlan
+from states.schemas.costs import PriceRangeModel
 
 __all__ = [
     "UserIntentModel",
@@ -13,5 +14,6 @@ __all__ = [
     "PricingModel",
     "ReviewDecisionModel",
     "FinalTripPlanModel",
-    "UserFriendlyTripPlan"
+    "UserFriendlyTripPlan",
+    "PriceRangeModel"
 ]
