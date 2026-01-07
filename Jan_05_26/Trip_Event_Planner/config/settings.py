@@ -24,8 +24,7 @@ class Settings(BaseSettings):
 
     # Memory / Reducers
     max_message_window: int = 12
-    enable_conversation_summary: bool = False
-
+    
     # Planner / Pricing Defaults
     default_budget_buffer_percent: int = 10
     max_planner_retries: int = 3
