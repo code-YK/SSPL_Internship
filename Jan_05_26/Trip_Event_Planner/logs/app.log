@@ -1,0 +1,400 @@
+2026-01-07 15:39:42 || INFO || notebook-test || Logger initialized successfully from notebook
+2026-01-07 15:41:34 || INFO || tools.research || Searching destination info: Goa India travel guide
+2026-01-07 15:44:55 || INFO || tools.research || Searching destination info: Goa India travel guide
+2026-01-07 15:45:40 || INFO || tools.research || Searching weather info: Weather in Goa during December
+2026-01-07 15:46:42 || INFO || tools.research || Searching venues: Best venues for birthday party in Goa
+2026-01-07 16:08:39 || INFO || tools.planner || Calculated trip days: 6 days
+2026-01-07 16:08:49 || INFO || tools.planner || Validating event day 3 / 6: True
+2026-01-07 16:09:45 || INFO || tools.planner || Validating event day 10 / 6: False
+2026-01-07 16:09:54 || INFO || tools.planner || Suggested rest days: [4]
+2026-01-07 16:10:55 || INFO || tools.pricing || Calculated total cost: 75000
+2026-01-07 16:11:10 || INFO || tools.pricing || Applied buffer: 7500
+2026-01-07 16:11:34 || INFO || tools.pricing || Identified cost risks: ['Total cost exceeds budget', 'Budget margin is very tight']
+2026-01-07 16:13:15 || INFO || notebook-test || All tests completed successfully
+2026-01-07 18:54:42 || INFO || llm || Initializing Groq LLM
+2026-01-07 18:54:43 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-07 18:57:56 || INFO || llm || Initializing Groq LLM
+2026-01-07 18:57:57 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-07 19:00:05 || INFO || llm || Initializing Groq LLM
+2026-01-07 19:00:05 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-07 19:01:37 || INFO || llm || Initializing Groq LLM
+2026-01-07 19:01:37 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-07 19:02:07 || INFO || nodes.intent || Running intent extraction node
+2026-01-07 19:02:08 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-07 19:02:31 || INFO || nodes.research || Running research agent
+2026-01-07 19:02:31 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:02:32 || INFO || tools.research || Searching weather info: Weather in Goa during None to None
+2026-01-07 19:02:37 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:02:42 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:02:42 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:02:44 || INFO || tools.research_cost || Extracted flight price range: {'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:02:44 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:02:44 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:02:46 || INFO || tools.research_cost || Extracted hotel price range: {'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:02:46 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:02:46 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:02:48 || INFO || tools.research_cost || Extracted event price range: {'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:02:48 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:02:48 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:02:50 || INFO || tools.research_cost || Extracted transport price range: {'category': 'transport', 'min_price': 10, 'max_price': 1200, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:02:52 || INFO || nodes.research || Research completed successfully
+2026-01-07 19:05:31 || INFO || llm || Initializing Groq LLM
+2026-01-07 19:05:32 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-07 19:05:36 || INFO || nodes.intent || Running intent extraction node
+2026-01-07 19:05:37 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-07 19:05:54 || INFO || nodes.research || Running research agent
+2026-01-07 19:05:54 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:05:55 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:05:57 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:05:58 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:05:58 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:06:00 || INFO || tools.research_cost || Extracted flight price range: {'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:06:00 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:06:00 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:06:01 || INFO || tools.research_cost || Extracted hotel price range: {'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:06:01 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:06:01 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:06:02 || INFO || tools.research_cost || Extracted event price range: {'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:06:02 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:06:02 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:06:03 || INFO || tools.research_cost || Extracted transport price range: {'category': 'transport', 'min_price': 10, 'max_price': 2100, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:06:05 || INFO || nodes.research || Research completed successfully
+2026-01-07 19:09:39 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:11:31 || INFO || llm || Initializing Groq LLM
+2026-01-07 19:11:32 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-07 19:12:20 || INFO || Notebook-Testing-Agents(Nodes) || Logger initialized for testing agents notebook.
+2026-01-07 19:12:20 || INFO || Notebook-Testing-Agents(Nodes) || Groq API key loaded: True
+2026-01-07 19:12:20 || INFO || Notebook-Testing-Agents(Nodes) || Groq model: llama-3.3-70b-versatile
+2026-01-07 19:12:28 || INFO || nodes.intent || Running intent extraction node
+2026-01-07 19:12:28 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-07 19:12:33 || INFO || nodes.research || Running research agent
+2026-01-07 19:12:33 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:12:34 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:12:34 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:12:36 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:12:36 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:12:37 || INFO || tools.research_cost || Extracted flight price range: {'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:12:37 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:12:37 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:12:38 || INFO || tools.research_cost || Extracted hotel price range: {'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:12:38 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:12:38 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:12:39 || INFO || tools.research_cost || Extracted event price range: {'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:12:39 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:12:39 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:12:40 || INFO || tools.research_cost || Extracted transport price range: {'category': 'transport', 'min_price': 10, 'max_price': 1200, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:12:42 || INFO || nodes.research || Research completed successfully
+2026-01-07 19:12:53 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:12:58 || INFO || nodes.review || Review decision | stage=research | approved=False
+2026-01-07 19:13:41 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:13:43 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-07 19:13:57 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:14:36 || INFO || nodes.review || Review decision | stage=research | approved=False
+2026-01-07 19:15:00 || INFO || nodes.research || Running research agent
+2026-01-07 19:15:00 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:15:02 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:15:02 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:15:03 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:15:03 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:15:05 || INFO || tools.research_cost || Extracted flight price range: {'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:15:05 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:15:05 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:15:06 || INFO || tools.research_cost || Extracted hotel price range: {'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:15:06 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:15:06 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:15:08 || INFO || tools.research_cost || Extracted event price range: {'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:15:08 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:15:08 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:15:09 || INFO || tools.research_cost || Extracted transport price range: {'category': 'transport', 'min_price': 10, 'max_price': 1200, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:15:11 || INFO || nodes.research || Research completed successfully
+2026-01-07 19:15:58 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:15:59 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-07 19:16:08 || INFO || nodes.planner || Running planner agent
+2026-01-07 19:16:08 || INFO || tools.planner || Calculated trip days: 6 days
+2026-01-07 19:16:09 || INFO || nodes.planner || Itinerary created successfully
+2026-01-07 19:16:30 || INFO || nodes.review || Entering review node for stage: planner
+2026-01-07 19:16:33 || INFO || nodes.review || Review decision | stage=planner | approved=True
+2026-01-07 19:16:46 || INFO || nodes.pricing || Running pricing agent
+2026-01-07 19:16:46 || INFO || tools.research_cost || Extracting 709 price range
+2026-01-07 19:16:46 || INFO || tools.research || Searching destination info: 33
+2026-01-07 19:22:20 || INFO || Notebook-Testing-Agents(Nodes) || Logger initialized for testing agents notebook.
+2026-01-07 19:22:20 || INFO || Notebook-Testing-Agents(Nodes) || Groq API key loaded: True
+2026-01-07 19:22:20 || INFO || Notebook-Testing-Agents(Nodes) || Groq model: llama-3.3-70b-versatile
+2026-01-07 19:22:20 || INFO || llm || Initializing Groq LLM
+2026-01-07 19:22:20 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-07 19:22:20 || INFO || nodes.intent || Running intent extraction node
+2026-01-07 19:22:21 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-07 19:22:21 || INFO || nodes.research || Running research agent
+2026-01-07 19:22:21 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:22:22 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:22:23 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:22:24 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:22:24 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:22:25 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:22:25 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:22:25 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:22:26 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:22:26 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:22:26 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:22:27 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:22:27 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:22:27 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:22:28 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 10, 'max_price': 1200, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:22:30 || INFO || nodes.research || Research completed successfully
+2026-01-07 19:22:30 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:22:37 || INFO || nodes.review || Review decision | stage=research | approved=False
+2026-01-07 19:22:37 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:22:48 || INFO || nodes.review || Review decision | stage=research | approved=False
+2026-01-07 19:22:48 || INFO || nodes.research || Running research agent
+2026-01-07 19:22:48 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:22:49 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:22:49 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:22:50 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:22:50 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:22:52 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:22:52 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:22:52 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:22:53 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:22:53 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:22:53 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:22:54 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:22:54 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:22:54 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:22:55 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 10, 'max_price': 1200, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:23:18 || INFO || Notebook-Testing-Agents(Nodes) || Logger initialized for testing agents notebook.
+2026-01-07 19:23:18 || INFO || Notebook-Testing-Agents(Nodes) || Groq API key loaded: True
+2026-01-07 19:23:18 || INFO || Notebook-Testing-Agents(Nodes) || Groq model: llama-3.3-70b-versatile
+2026-01-07 19:23:19 || INFO || llm || Initializing Groq LLM
+2026-01-07 19:23:19 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-07 19:23:19 || INFO || nodes.intent || Running intent extraction node
+2026-01-07 19:23:19 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-07 19:23:19 || INFO || nodes.research || Running research agent
+2026-01-07 19:23:19 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:23:20 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:23:21 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:23:22 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:23:22 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:23:23 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:23:23 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:23:23 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:23:25 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:23:25 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:23:25 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:23:26 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:23:26 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:23:26 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:23:27 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 10, 'max_price': 1200, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:23:56 || INFO || nodes.research || Research completed successfully
+2026-01-07 19:23:56 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:23:58 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-07 19:23:58 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:24:02 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-07 19:24:03 || INFO || nodes.research || Running research agent
+2026-01-07 19:24:03 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:24:03 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:24:04 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:24:05 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:24:05 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:24:07 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:24:07 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:24:07 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:24:08 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:24:08 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:24:08 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:24:13 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:24:13 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:24:13 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:24:19 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 10, 'max_price': 1200, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:24:58 || INFO || nodes.research || Research completed successfully
+2026-01-07 19:24:58 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:25:08 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-07 19:25:08 || INFO || nodes.planner || Running planner agent
+2026-01-07 19:25:08 || INFO || tools.planner || Calculated trip days: 6 days
+2026-01-07 19:25:09 || INFO || nodes.planner || Itinerary created successfully
+2026-01-07 19:25:09 || INFO || nodes.review || Entering review node for stage: planner
+2026-01-07 19:25:23 || INFO || nodes.review || Review decision | stage=planner | approved=True
+2026-01-07 19:25:23 || INFO || nodes.pricing || Running pricing agent
+2026-01-07 19:25:23 || INFO || tools.pricing || Calculated total cost: 9831
+2026-01-07 19:25:23 || INFO || tools.pricing || Applied buffer: 983
+2026-01-07 19:25:23 || INFO || tools.pricing || Identified cost risks: []
+2026-01-07 19:25:23 || INFO || nodes.pricing || Pricing completed successfully
+2026-01-07 19:29:10 || INFO || nodes.review || Entering review node for stage: pricing
+2026-01-07 19:29:12 || INFO || nodes.review || Review decision | stage=pricing | approved=True
+2026-01-07 19:29:48 || INFO || nodes.final_presenter || Running final presenter node
+2026-01-07 19:32:14 || INFO || Notebook-Testing-Agents(Nodes) || Logger initialized for testing agents notebook.
+2026-01-07 19:32:14 || INFO || Notebook-Testing-Agents(Nodes) || Groq API key loaded: True
+2026-01-07 19:32:14 || INFO || Notebook-Testing-Agents(Nodes) || Groq model: llama-3.3-70b-versatile
+2026-01-07 19:32:14 || INFO || llm || Initializing Groq LLM
+2026-01-07 19:32:14 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-07 19:32:14 || INFO || nodes.intent || Running intent extraction node
+2026-01-07 19:32:15 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-07 19:32:15 || INFO || nodes.research || Running research agent
+2026-01-07 19:32:15 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:32:16 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:32:16 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:32:18 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:32:18 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:32:19 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:32:19 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:32:19 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:32:20 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:32:20 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:32:20 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:34:58 || INFO || nodes.research || Running research agent
+2026-01-07 19:34:58 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:35:00 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:35:00 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:35:02 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:35:02 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:36:12 || INFO || Notebook-Testing-Agents(Nodes) || Logger initialized for testing agents notebook.
+2026-01-07 19:36:12 || INFO || Notebook-Testing-Agents(Nodes) || Groq API key loaded: True
+2026-01-07 19:36:12 || INFO || Notebook-Testing-Agents(Nodes) || Groq model: llama-3.1-8b-instant
+2026-01-07 19:36:12 || INFO || llm || Initializing Groq LLM
+2026-01-07 19:36:13 || INFO || llm || Groq LLM initialized | model=llama-3.1-8b-instant | temperature=0.3
+2026-01-07 19:36:13 || INFO || nodes.intent || Running intent extraction node
+2026-01-07 19:36:14 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-07 19:36:14 || INFO || nodes.research || Running research agent
+2026-01-07 19:36:14 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:36:15 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:36:18 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:36:19 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:36:19 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:36:21 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 29, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:36:21 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:36:21 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:36:24 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:36:24 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:36:24 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:36:27 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 5500, 'currency': 'INR', 'confidence': 'medium'}
+2026-01-07 19:36:27 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:36:27 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:36:29 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 150, 'max_price': 3000, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:37:11 || INFO || nodes.research || Research completed successfully
+2026-01-07 19:37:11 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:37:15 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-07 19:37:15 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:37:18 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-07 19:37:18 || INFO || nodes.research || Running research agent
+2026-01-07 19:37:18 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:37:19 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:37:20 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:37:20 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:37:20 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:37:22 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': None, 'max_price': None, 'currency': None, 'confidence': 'low'}
+2026-01-07 19:37:22 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:37:22 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:37:35 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': None, 'max_price': None, 'currency': None, 'confidence': 'low'}
+2026-01-07 19:37:35 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:37:35 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:37:50 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 5500, 'currency': 'INR', 'confidence': 'medium'}
+2026-01-07 19:37:50 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:37:50 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:38:05 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 150, 'max_price': 3000, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:38:53 || INFO || Notebook-Testing-Agents(Nodes) || Logger initialized for testing agents notebook.
+2026-01-07 19:38:53 || INFO || Notebook-Testing-Agents(Nodes) || Groq API key loaded: True
+2026-01-07 19:38:53 || INFO || Notebook-Testing-Agents(Nodes) || Groq model: llama-3.1-8b-instant
+2026-01-07 19:39:05 || INFO || llm || Initializing Groq LLM
+2026-01-07 19:39:05 || INFO || llm || Groq LLM initialized | model=llama-3.1-8b-instant | temperature=0.3
+2026-01-07 19:39:09 || INFO || nodes.intent || Running intent extraction node
+2026-01-07 19:39:10 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-07 19:39:14 || INFO || nodes.research || Running research agent
+2026-01-07 19:39:14 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 19:39:15 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 19:39:16 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 19:39:16 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 19:39:16 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 19:39:19 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 29, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:39:19 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 19:39:19 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-07 19:39:20 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 161, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 19:39:20 || INFO || tools.research_cost || Extracting event price range
+2026-01-07 19:39:20 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-07 19:39:22 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 5500, 'currency': 'INR', 'confidence': 'medium'}
+2026-01-07 19:39:22 || INFO || tools.research_cost || Extracting transport price range
+2026-01-07 19:39:22 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-07 19:39:23 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 150, 'max_price': 3000, 'currency': 'INR', 'confidence': 'high'}
+2026-01-07 19:40:09 || INFO || nodes.research || Research completed successfully
+2026-01-07 19:40:33 || INFO || nodes.review || Entering review node for stage: research
+2026-01-07 19:40:39 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-07 19:40:53 || INFO || nodes.planner || Running planner agent
+2026-01-07 19:40:53 || INFO || tools.planner || Calculated trip days: 6 days
+2026-01-07 20:06:33 || INFO || Notebook-Testing-Agents(Nodes) || Logger initialized for testing agents notebook.
+2026-01-07 20:06:33 || INFO || Notebook-Testing-Agents(Nodes) || Groq API key loaded: True
+2026-01-07 20:06:33 || INFO || Notebook-Testing-Agents(Nodes) || Groq model: llama-3.3-70b-versatile
+2026-01-07 20:06:33 || INFO || llm || Initializing Groq LLM
+2026-01-07 20:06:34 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-07 20:06:34 || INFO || nodes.intent || Running intent extraction node
+2026-01-07 20:06:34 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-07 20:06:34 || INFO || nodes.research || Running research agent
+2026-01-07 20:06:34 || INFO || tools.research || Searching destination info: Goa
+2026-01-07 20:06:36 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-07 20:06:38 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-07 20:06:40 || INFO || tools.research_cost || Extracting flight price range
+2026-01-07 20:06:40 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-07 20:06:42 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 200, 'max_price': 800, 'currency': 'USD', 'confidence': 'high'}
+2026-01-07 20:06:42 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-07 20:06:42 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-08 15:29:20 || INFO || Notebook-Testing-Agents(Nodes) || Logger initialized for testing agents notebook.
+2026-01-08 15:29:20 || INFO || Notebook-Testing-Agents(Nodes) || Groq API key loaded: True
+2026-01-08 15:29:20 || INFO || Notebook-Testing-Agents(Nodes) || Groq model: llama-3.3-70b-versatile
+2026-01-08 15:29:21 || INFO || llm || Initializing Groq LLM
+2026-01-08 15:29:22 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 15:29:22 || INFO || nodes.intent || Running intent extraction node
+2026-01-08 15:29:23 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-08 15:29:23 || INFO || nodes.research || Running research agent
+2026-01-08 15:29:23 || INFO || tools.research || Searching destination info: Goa
+2026-01-08 15:29:25 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-08 15:29:28 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-08 15:29:30 || INFO || tools.research_cost || Extracting flight price range
+2026-01-08 15:29:30 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-08 15:29:33 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-08 15:29:33 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-08 15:29:33 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-08 15:29:37 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-08 15:29:37 || INFO || tools.research_cost || Extracting event price range
+2026-01-08 15:29:37 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-08 15:29:40 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 15:29:40 || INFO || tools.research_cost || Extracting transport price range
+2026-01-08 15:29:40 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-08 15:29:42 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 200, 'max_price': 1000, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 15:38:56 || INFO || Notebook-Testing-Agents(Nodes) || Logger initialized for testing agents notebook.
+2026-01-08 15:38:56 || INFO || Notebook-Testing-Agents(Nodes) || Groq API key loaded: True
+2026-01-08 15:38:56 || INFO || Notebook-Testing-Agents(Nodes) || Groq model: llama-3.3-70b-versatile
+2026-01-08 15:38:58 || INFO || llm || Initializing Groq LLM
+2026-01-08 15:38:59 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 15:39:03 || INFO || nodes.intent || Running intent extraction node
+2026-01-08 15:39:04 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-08 15:39:09 || INFO || nodes.research || Running research agent
+2026-01-08 15:39:09 || INFO || tools.research || Searching destination info: Goa
+2026-01-08 15:39:10 || INFO || tools.research || Searching weather info: Weather in Goa during 2024-01-10 to 2024-01-15
+2026-01-08 15:39:12 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-08 15:39:13 || INFO || tools.research_cost || Extracting flight price range
+2026-01-08 15:39:13 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-08 15:39:15 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 33, 'max_price': 709, 'currency': 'USD', 'confidence': 'high'}
+2026-01-08 15:39:15 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-08 15:39:15 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-08 15:39:17 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-08 15:39:17 || INFO || tools.research_cost || Extracting event price range
+2026-01-08 15:39:17 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-08 15:39:18 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 15:39:18 || INFO || tools.research_cost || Extracting transport price range
+2026-01-08 15:39:18 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-08 15:39:20 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 200, 'max_price': 1000, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 15:39:22 || INFO || nodes.research || Research completed successfully
+2026-01-08 15:39:33 || INFO || nodes.review || Entering review node for stage: research
+2026-01-08 15:39:36 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-08 15:39:40 || INFO || nodes.planner || Running planner agent
+2026-01-08 15:39:40 || INFO || tools.planner || Calculated trip days: 6 days
+2026-01-08 15:39:41 || INFO || nodes.planner || Itinerary created successfully
+2026-01-08 15:39:44 || INFO || nodes.review || Entering review node for stage: planner
+2026-01-08 15:39:47 || INFO || nodes.review || Review decision | stage=planner | approved=True
+2026-01-08 15:39:53 || INFO || nodes.pricing || Running pricing agent
+2026-01-08 15:39:53 || INFO || tools.pricing || Calculated total cost: 9801
+2026-01-08 15:39:53 || INFO || tools.pricing || Applied buffer: 980
+2026-01-08 15:39:53 || INFO || tools.pricing || Identified cost risks: []
+2026-01-08 15:39:54 || INFO || nodes.pricing || Pricing completed successfully
+2026-01-08 15:42:13 || INFO || nodes.review || Entering review node for stage: pricing
+2026-01-08 15:42:16 || INFO || nodes.review || Review decision | stage=pricing | approved=True
+2026-01-08 15:42:20 || INFO || nodes.final_presenter || Running final presenter node
+2026-01-08 15:42:22 || INFO || nodes.final_presenter || Final user-friendly output generated
+2026-01-08 15:43:14 || INFO || Notebook-Testing-Agents(Nodes) || Completed testing of agents notebook.
