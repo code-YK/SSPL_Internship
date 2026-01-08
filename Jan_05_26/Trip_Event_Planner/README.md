@@ -309,13 +309,8 @@ Contributions are welcome! Areas for improvement:
 - Multi-language support
 - Enhanced cost prediction models
 
-## 📄 License
-
-[Specify your license here]
-
 ## 👥 Authors
-
-[Your name/team information]
+Yadav Kuldeep
 
 ## 🙏 Acknowledgments
 
