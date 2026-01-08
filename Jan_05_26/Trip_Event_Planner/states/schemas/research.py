@@ -8,7 +8,7 @@ class VenueOptionModel(BaseModel):
     venue_type: str = Field(
         description="hotel, resort, restaurant, activity venue"
     )
-    estimated_price_per_day: int
+    estimated_price_per_day: Optional[int]
     suitable_for_event: bool
 
 # Model : Research phase output
