@@ -12,14 +12,29 @@ logger = setup_logger(__name__)
 
 def final_presenter_node(state: Dict) -> Dict:
     """
-    Converts the approved structured plan into a user-friendly explanation.
+    Assembles the final structured plan if needed and converts it
+    into a user-friendly explanation.
     """
     logger.info("Running final presenter node")
 
+    # Assemble FinalTripPlanModel if missing
     final_plan: FinalTripPlanModel | None = state.get("final_output")
 
-    if not final_plan:
-        raise ValueError("FinalTripPlanModel missing in state")
+    if final_plan is None:
+        logger.info("FinalTripPlanModel missing. Assembling inside final presenter.")
+
+        try:
+            final_plan = FinalTripPlanModel(
+                user_intent=state["user_intent"],
+                research_summary=state["research_result"],
+                itinerary=state["itinerary"],
+                pricing=state["pricing"],
+            )
+            state["final_output"] = final_plan
+        except KeyError as e:
+            raise ValueError(
+                f"Cannot assemble FinalTripPlanModel. Missing state field: {e}"
+            )
 
     prompt = FINAL_PRESENTATION_PROMPT.format(
         structured_plan=final_plan.model_dump()
@@ -28,7 +43,7 @@ def final_presenter_node(state: Dict) -> Dict:
     response = llm.invoke([HumanMessage(content=prompt)])
 
     user_friendly_output = UserFriendlyTripPlan(
-        title="Your Personalized Trip & Event Plan 🎉",
+        title="Your Personalized Trip & Event Plan",
         summary=response.content,
         itinerary_overview=response.content,
         budget_summary=response.content,
@@ -41,7 +56,7 @@ def final_presenter_node(state: Dict) -> Dict:
 
     logger.info("Final user-friendly output generated")
 
-    return {
-        "user_friendly_output": user_friendly_output,
-        "final_approved": True,
-    }
+    state["user_friendly_output"] = user_friendly_output
+    state["final_approved"] = True
+
+    return state
