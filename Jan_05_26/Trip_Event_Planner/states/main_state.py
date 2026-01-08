@@ -31,3 +31,4 @@ class TripEventState(TypedDict, total=False):
     current_stage: Optional[str]
     final_approved: bool
     final_trip_plan: Optional[FinalTripPlanModel]
+    user_friendly_output: Optional[UserFriendlyTripPlan]
