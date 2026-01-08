@@ -1,0 +1,24 @@
+{
+  "schema_version": "v1",
+  "name": "trip-event-planner",
+  "description": "Multi-agent trip and event planning system with HITL and pricing intelligence",
+
+  "graphs": {
+    "trip_event_graph": "./graph.py:trip_event_graph"
+  },
+
+  "dependencies": [
+    "requirements.txt"
+  ],
+
+  "modules": [
+    "graph",
+    "nodes",
+    "tools",
+    "states",
+    "utils",
+    "config"
+  ],
+
+  "env": ".env"
+}
