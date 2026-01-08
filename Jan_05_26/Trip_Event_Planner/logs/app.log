@@ -692,3 +692,217 @@ During task with name 'final_presenter' and id '97fb34b5-d501-9491-6e62-0426ed5e
 2026-01-08 17:38:56 || INFO || __main__ || Trip Event Planner finished execution
 2026-01-08 17:58:12 || INFO || llm || Initializing Groq LLM
 2026-01-08 17:58:12 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:18:02 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:18:03 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:18:13 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:18:14 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:18:14 || INFO || __main__ || Starting Trip Event Planner
+2026-01-08 18:19:16 || INFO || nodes.intent || Running intent extraction node
+2026-01-08 18:19:17 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-08 18:19:17 || INFO || nodes.research || Running research agent
+2026-01-08 18:19:17 || INFO || tools.research || Searching destination info: Goa
+2026-01-08 18:19:19 || INFO || tools.research || Searching weather info: Weather in Goa during 2026-03-10 to 2026-03-14
+2026-01-08 18:19:21 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-08 18:19:23 || INFO || tools.research_cost || Extracting flight price range
+2026-01-08 18:19:23 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-08 18:19:26 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 329, 'max_price': 1175, 'currency': 'USD', 'confidence': 'high'}
+2026-01-08 18:19:26 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-08 18:19:26 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-08 18:19:28 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 112, 'currency': 'GBP', 'confidence': 'medium'}
+2026-01-08 18:19:28 || INFO || tools.research_cost || Extracting event price range
+2026-01-08 18:19:28 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-08 18:19:30 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 18:19:30 || INFO || tools.research_cost || Extracting transport price range
+2026-01-08 18:19:30 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-08 18:19:32 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 10, 'max_price': 4500, 'currency': 'INR', 'confidence': 'medium'}
+2026-01-08 18:19:34 || INFO || nodes.research || Research completed successfully
+2026-01-08 18:19:34 || INFO || nodes.review || Entering review node for stage: research
+2026-01-08 18:19:50 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-08 18:19:50 || INFO || graph || Research approved. Moving to planner.
+2026-01-08 18:19:50 || INFO || nodes.planner || Running planner agent
+2026-01-08 18:19:50 || INFO || tools.planner || Calculated trip days: 5 days
+2026-01-08 18:19:51 || INFO || nodes.planner || Itinerary created successfully
+2026-01-08 18:19:51 || INFO || nodes.review || Entering review node for stage: planner
+2026-01-08 18:20:06 || INFO || nodes.review || Review decision | stage=planner | approved=True
+2026-01-08 18:20:06 || INFO || graph || Planner approved. Moving to pricing.
+2026-01-08 18:20:06 || INFO || nodes.pricing || Running pricing agent
+2026-01-08 18:20:06 || INFO || tools.pricing || Calculated total cost: 14167
+2026-01-08 18:20:06 || INFO || tools.pricing || Applied buffer: 1416
+2026-01-08 18:20:06 || INFO || tools.pricing || Identified cost risks: []
+2026-01-08 18:20:07 || INFO || nodes.pricing || Pricing completed successfully
+2026-01-08 18:20:07 || INFO || nodes.review || Entering review node for stage: pricing
+2026-01-08 18:20:31 || INFO || nodes.review || Review decision | stage=pricing | approved=False
+2026-01-08 18:20:31 || INFO || graph || Pricing rejected. Looping back to pricing.
+2026-01-08 18:20:31 || INFO || nodes.pricing || Running pricing agent
+2026-01-08 18:20:31 || INFO || tools.pricing || Calculated total cost: 14167
+2026-01-08 18:20:31 || INFO || tools.pricing || Applied buffer: 1416
+2026-01-08 18:20:31 || INFO || tools.pricing || Identified cost risks: []
+2026-01-08 18:20:32 || INFO || nodes.pricing || Pricing completed successfully
+2026-01-08 18:20:32 || INFO || nodes.review || Entering review node for stage: pricing
+2026-01-08 18:20:48 || INFO || nodes.review || Review decision | stage=pricing | approved=True
+2026-01-08 18:20:48 || INFO || graph || Pricing approved. Assembling final trip plan.
+2026-01-08 18:20:48 || INFO || nodes.final_presenter || Running final presenter node
+2026-01-08 18:20:48 || ERROR || __main__ || Error while running Trip Event Planner
+Traceback (most recent call last):
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\main.py", line 28, in run
+    result = trip_event_graph.invoke(initial_state)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\main.py", line 3068, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\main.py", line 2643, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\nodes\final_presenter.py", line 22, in final_presenter_node
+    raise ValueError("FinalTripPlanModel missing in state")
+ValueError: FinalTripPlanModel missing in state
+During task with name 'final_presenter' and id '155310c5-94dc-0ec9-c52a-dfcbc241d440'
+2026-01-08 18:20:48 || INFO || __main__ || Trip Event Planner finished execution
+2026-01-08 18:32:53 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:32:54 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:32:58 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:32:59 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:33:03 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:33:03 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:33:07 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:33:08 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:33:10 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:33:11 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:33:13 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:33:13 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:33:19 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:33:20 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:33:25 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:33:25 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:33:32 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:33:32 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:33:48 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:33:49 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:33:55 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:33:55 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:33:55 || INFO || __main__ || Starting Trip Event Planner
+2026-01-08 18:34:13 || INFO || nodes.intent || Running intent extraction node
+2026-01-08 18:34:14 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-08 18:34:14 || INFO || nodes.research || Running research agent
+2026-01-08 18:34:14 || INFO || tools.research || Searching destination info: Goa
+2026-01-08 18:34:15 || INFO || tools.research || Searching weather info: Weather in Goa during 2026-03-10 to 2026-03-14
+2026-01-08 18:34:16 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-08 18:34:17 || INFO || tools.research_cost || Extracting flight price range
+2026-01-08 18:34:17 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-08 18:34:19 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 329, 'max_price': 1175, 'currency': 'USD', 'confidence': 'high'}
+2026-01-08 18:34:19 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-08 18:34:19 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-08 18:34:21 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 112, 'currency': 'USD', 'confidence': 'low'}
+2026-01-08 18:34:21 || INFO || tools.research_cost || Extracting event price range
+2026-01-08 18:34:21 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-08 18:34:22 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 18:34:22 || INFO || tools.research_cost || Extracting transport price range
+2026-01-08 18:34:22 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-08 18:34:23 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 10, 'max_price': 4500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 18:34:25 || INFO || nodes.research || Research completed successfully
+2026-01-08 18:34:25 || INFO || nodes.review || Entering review node for stage: research
+2026-01-08 18:34:28 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-08 18:34:28 || INFO || graph || Research approved. Moving to planner.
+2026-01-08 18:34:28 || INFO || nodes.planner || Running planner agent
+2026-01-08 18:34:28 || INFO || tools.planner || Calculated trip days: 5 days
+2026-01-08 18:34:32 || INFO || nodes.planner || Itinerary created successfully
+2026-01-08 18:34:32 || INFO || nodes.review || Entering review node for stage: planner
+2026-01-08 18:34:34 || INFO || nodes.review || Review decision | stage=planner | approved=True
+2026-01-08 18:34:34 || INFO || graph || Planner approved. Moving to pricing.
+2026-01-08 18:34:34 || INFO || nodes.pricing || Running pricing agent
+2026-01-08 18:34:34 || INFO || tools.pricing || Calculated total cost: 14167
+2026-01-08 18:34:34 || INFO || tools.pricing || Applied buffer: 1416
+2026-01-08 18:34:34 || INFO || tools.pricing || Identified cost risks: []
+2026-01-08 18:34:36 || INFO || nodes.pricing || Pricing completed successfully
+2026-01-08 18:34:36 || INFO || nodes.review || Entering review node for stage: pricing
+2026-01-08 18:34:39 || INFO || nodes.review || Review decision | stage=pricing | approved=True
+2026-01-08 18:34:39 || INFO || graph || Pricing approved. Assembling final trip plan.
+2026-01-08 18:34:39 || INFO || nodes.final_presenter || Running final presenter node
+2026-01-08 18:34:39 || INFO || nodes.final_presenter || FinalTripPlanModel missing. Assembling inside final presenter.
+2026-01-08 18:34:44 || INFO || nodes.final_presenter || Final user-friendly output generated
+2026-01-08 18:34:44 || ERROR || __main__ || Error while running Trip Event Planner
+Traceback (most recent call last):
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\main.py", line 31, in run
+    final_output = result["user_friendly_output"]
+                   ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'user_friendly_output'
+2026-01-08 18:34:44 || INFO || __main__ || Trip Event Planner finished execution
+2026-01-08 18:38:05 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:38:05 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:38:08 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:38:08 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:38:11 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:38:12 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:39:14 || INFO || llm || Initializing Groq LLM
+2026-01-08 18:39:14 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 18:39:14 || INFO || __main__ || Starting Trip Event Planner
+2026-01-08 18:39:28 || INFO || nodes.intent || Running intent extraction node
+2026-01-08 18:39:29 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-08 18:39:29 || INFO || nodes.research || Running research agent
+2026-01-08 18:39:29 || INFO || tools.research || Searching destination info: Goa
+2026-01-08 18:39:30 || INFO || tools.research || Searching weather info: Weather in Goa during 2026-03-10 to 2026-03-14
+2026-01-08 18:39:31 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-08 18:39:32 || INFO || tools.research_cost || Extracting flight price range
+2026-01-08 18:39:32 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-08 18:39:33 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 329, 'max_price': 1175, 'currency': 'USD', 'confidence': 'high'}
+2026-01-08 18:39:33 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-08 18:39:33 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-08 18:39:35 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 112, 'currency': 'USD', 'confidence': 'low'}
+2026-01-08 18:39:35 || INFO || tools.research_cost || Extracting event price range
+2026-01-08 18:39:35 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-08 18:39:36 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 18:39:36 || INFO || tools.research_cost || Extracting transport price range
+2026-01-08 18:39:36 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-08 18:39:37 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 10, 'max_price': 4500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 18:39:39 || INFO || nodes.research || Research completed successfully
+2026-01-08 18:39:39 || INFO || nodes.review || Entering review node for stage: research
+2026-01-08 18:39:41 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-08 18:39:41 || INFO || graph || Research approved. Moving to planner.
+2026-01-08 18:39:41 || INFO || nodes.planner || Running planner agent
+2026-01-08 18:39:41 || INFO || tools.planner || Calculated trip days: 5 days
+2026-01-08 18:39:46 || INFO || nodes.planner || Itinerary created successfully
+2026-01-08 18:39:46 || INFO || nodes.review || Entering review node for stage: planner
+2026-01-08 18:39:48 || INFO || nodes.review || Review decision | stage=planner | approved=True
+2026-01-08 18:39:48 || INFO || graph || Planner approved. Moving to pricing.
+2026-01-08 18:39:48 || INFO || nodes.pricing || Running pricing agent
+2026-01-08 18:39:48 || INFO || tools.pricing || Calculated total cost: 14167
+2026-01-08 18:39:48 || INFO || tools.pricing || Applied buffer: 1416
+2026-01-08 18:39:48 || INFO || tools.pricing || Identified cost risks: []
+2026-01-08 18:39:50 || INFO || nodes.pricing || Pricing completed successfully
+2026-01-08 18:39:50 || INFO || nodes.review || Entering review node for stage: pricing
+2026-01-08 18:39:52 || INFO || nodes.review || Review decision | stage=pricing | approved=True
+2026-01-08 18:39:52 || INFO || graph || Pricing approved. Assembling final trip plan.
+2026-01-08 18:39:52 || INFO || nodes.final_presenter || Running final presenter node
+2026-01-08 18:39:52 || INFO || nodes.final_presenter || FinalTripPlanModel missing. Assembling inside final presenter.
+2026-01-08 18:39:58 || INFO || nodes.final_presenter || Final user-friendly output generated
+2026-01-08 18:39:58 || INFO || __main__ || Trip Event Planner finished execution
