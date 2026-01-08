@@ -398,3 +398,117 @@
 2026-01-08 15:42:20 || INFO || nodes.final_presenter || Running final presenter node
 2026-01-08 15:42:22 || INFO || nodes.final_presenter || Final user-friendly output generated
 2026-01-08 15:43:14 || INFO || Notebook-Testing-Agents(Nodes) || Completed testing of agents notebook.
+2026-01-08 16:33:53 || INFO || llm || Initializing Groq LLM
+2026-01-08 16:33:54 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 16:33:54 || INFO || __main__ || Starting Trip Event Planner
+2026-01-08 16:35:37 || INFO || nodes.intent || Running intent extraction node
+2026-01-08 16:35:38 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-08 16:35:38 || INFO || nodes.research || Running research agent
+2026-01-08 16:35:38 || INFO || tools.research || Searching destination info: pune
+2026-01-08 16:35:40 || INFO || tools.research || Searching weather info: Weather in pune during 2024-01-24 to 2024-01-26
+2026-01-08 16:35:43 || INFO || tools.research || Searching venues: Best venues for wedding anniversary in pune
+2026-01-08 16:35:45 || INFO || tools.research_cost || Extracting flight price range
+2026-01-08 16:35:45 || INFO || tools.research || Searching destination info: average flight cost to pune
+2026-01-08 16:35:48 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 38, 'max_price': 984, 'currency': 'USD', 'confidence': 'high'}
+2026-01-08 16:35:48 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-08 16:35:48 || INFO || tools.research || Searching destination info: average hotel cost per night in pune
+2026-01-08 16:35:51 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 7, 'max_price': 104, 'currency': 'USD', 'confidence': 'medium'}
+2026-01-08 16:35:51 || INFO || tools.research_cost || Extracting event price range
+2026-01-08 16:35:51 || INFO || tools.research || Searching destination info: wedding anniversary venue cost in pune
+2026-01-08 16:35:54 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 1100, 'max_price': 1300, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 16:35:54 || INFO || tools.research_cost || Extracting transport price range
+2026-01-08 16:35:54 || INFO || tools.research || Searching destination info: local transport cost per day in pune
+2026-01-08 16:35:56 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 8, 'max_price': 1500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 16:35:58 || INFO || nodes.research || Research completed successfully
+2026-01-08 16:35:58 || INFO || nodes.review || Entering review node for stage: research
+2026-01-08 16:36:23 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-08 16:36:23 || INFO || graph || Research approved. Moving to planner.
+2026-01-08 16:36:23 || INFO || nodes.planner || Running planner agent
+2026-01-08 16:36:23 || INFO || tools.planner || Calculated trip days: 3 days
+2026-01-08 16:36:24 || INFO || nodes.planner || Itinerary created successfully
+2026-01-08 16:36:24 || INFO || nodes.review || Entering review node for stage: planner
+2026-01-08 16:37:04 || INFO || nodes.review || Review decision | stage=planner | approved=True
+2026-01-08 16:37:04 || INFO || graph || Planner approved. Moving to pricing.
+2026-01-08 16:37:04 || INFO || nodes.pricing || Running pricing agent
+2026-01-08 16:37:04 || INFO || tools.pricing || Calculated total cost: 4138
+2026-01-08 16:37:04 || INFO || tools.pricing || Applied buffer: 413
+2026-01-08 16:37:04 || INFO || tools.pricing || Identified cost risks: []
+2026-01-08 16:37:04 || INFO || nodes.pricing || Pricing completed successfully
+2026-01-08 16:37:04 || INFO || nodes.review || Entering review node for stage: pricing
+2026-01-08 16:37:49 || INFO || nodes.review || Review decision | stage=pricing | approved=False
+2026-01-08 16:37:49 || INFO || graph || Pricing rejected. Looping back to pricing.
+2026-01-08 16:37:50 || INFO || nodes.pricing || Running pricing agent
+2026-01-08 16:37:50 || INFO || tools.pricing || Calculated total cost: 4138
+2026-01-08 16:37:50 || INFO || tools.pricing || Applied buffer: 413
+2026-01-08 16:37:50 || INFO || tools.pricing || Identified cost risks: []
+2026-01-08 16:37:50 || INFO || nodes.pricing || Pricing completed successfully
+2026-01-08 16:37:50 || INFO || nodes.review || Entering review node for stage: pricing
+2026-01-08 16:37:59 || INFO || nodes.review || Review decision | stage=pricing | approved=True
+2026-01-08 16:37:59 || INFO || graph || Pricing approved. Assembling final trip plan.
+2026-01-08 16:37:59 || INFO || nodes.final_presenter || Running final presenter node
+2026-01-08 16:37:59 || ERROR || __main__ || Error while running Trip Event Planner
+Traceback (most recent call last):
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\main.py", line 28, in run
+    result = Trip_Event_app.invoke(initial_state)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\main.py", line 3068, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\main.py", line 2643, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\nodes\final_presenter.py", line 22, in final_presenter_node
+    raise ValueError("FinalTripPlanModel missing in state")
+ValueError: FinalTripPlanModel missing in state
+During task with name 'final_presenter' and id '4ec3ac87-d64e-e7e5-d55b-a3c0e3ad1a6f'
+2026-01-08 16:37:59 || INFO || __main__ || Trip Event Planner finished execution
+2026-01-08 16:56:59 || INFO || llm || Initializing Groq LLM
+2026-01-08 16:57:00 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:00:44 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:00:45 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:02:42 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:02:42 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:11:20 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:11:21 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:15:03 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:15:05 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:15:10 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:15:12 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:15:21 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:15:23 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:15:34 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:15:36 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:15:44 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:15:46 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:15:53 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:15:54 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
