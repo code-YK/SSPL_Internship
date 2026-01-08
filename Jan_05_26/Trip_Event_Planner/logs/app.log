@@ -512,3 +512,183 @@ During task with name 'final_presenter' and id '4ec3ac87-d64e-e7e5-d55b-a3c0e3ad
 2026-01-08 17:15:46 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
 2026-01-08 17:15:53 || INFO || llm || Initializing Groq LLM
 2026-01-08 17:15:54 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:30:00 || INFO || nodes.intent || Running intent extraction node
+2026-01-08 17:31:26 || INFO || nodes.research || Running research agent
+2026-01-08 17:31:47 || INFO || nodes.intent || Running intent extraction node
+2026-01-08 17:32:47 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:32:47 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:32:48 || INFO || __main__ || Starting Trip Event Planner
+2026-01-08 17:32:58 || INFO || nodes.intent || Running intent extraction node
+2026-01-08 17:32:59 || ERROR || __main__ || Error while running Trip Event Planner
+Traceback (most recent call last):
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langchain_core\output_parsers\pydantic.py", line 28, in _parse_obj
+    return self.pydantic_object.model_validate(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\pydantic\main.py", line 716, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj,
+        ^^^^
+    ...<5 lines>...
+        by_name=by_name,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for UserIntentModel
+group_size
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/int_type
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\main.py", line 28, in run
+    result = trip_event_graph.invoke(initial_state)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\main.py", line 3068, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\main.py", line 2643, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\nodes\intent.py", line 37, in intent_node
+    intent = parser.parse(response.content)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langchain_core\output_parsers\pydantic.py", line 90, in parse
+    return self.parse_result([Generation(text=text)])
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langchain_core\output_parsers\pydantic.py", line 75, in parse_result
+    return self._parse_obj(json_object)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langchain_core\output_parsers\pydantic.py", line 35, in _parse_obj
+    raise self._parser_exception(e, obj) from e
+langchain_core.exceptions.OutputParserException: Failed to parse UserIntentModel from completion {"destination": "Goa", "start_date": "2026-03-10", "end_date": "2026-03-14", "budget": 150000, "event_type": "birthday", "group_size": null, "preferences": []}. Got: 1 validation error for UserIntentModel
+group_size
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/int_type
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE 
+During task with name 'intent' and id '2e50b772-4c00-d3ae-ac3c-4ea07f950432'
+2026-01-08 17:32:59 || INFO || __main__ || Trip Event Planner finished execution
+2026-01-08 17:36:45 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:36:45 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
+2026-01-08 17:36:45 || INFO || __main__ || Starting Trip Event Planner
+2026-01-08 17:37:03 || INFO || nodes.intent || Running intent extraction node
+2026-01-08 17:37:04 || INFO || nodes.intent || Extracted user intent successfully
+2026-01-08 17:37:04 || INFO || nodes.research || Running research agent
+2026-01-08 17:37:04 || INFO || tools.research || Searching destination info: Goa
+2026-01-08 17:37:06 || INFO || tools.research || Searching weather info: Weather in Goa during 2026-03-10 to 2026-03-14
+2026-01-08 17:37:09 || INFO || tools.research || Searching venues: Best venues for birthday in Goa
+2026-01-08 17:37:11 || INFO || tools.research_cost || Extracting flight price range
+2026-01-08 17:37:11 || INFO || tools.research || Searching destination info: average flight cost to Goa
+2026-01-08 17:37:13 || INFO || tools.research_cost || Extracted flight price range:{'category': 'flight', 'min_price': 33, 'max_price': 832, 'currency': 'USD', 'confidence': 'high'}
+2026-01-08 17:37:13 || INFO || tools.research_cost || Extracting hotel price range
+2026-01-08 17:37:13 || INFO || tools.research || Searching destination info: average hotel cost per night in Goa
+2026-01-08 17:37:16 || INFO || tools.research_cost || Extracted hotel price range:{'category': 'hotel', 'min_price': 9, 'max_price': 1321, 'currency': 'USD', 'confidence': 'high'}
+2026-01-08 17:37:16 || INFO || tools.research_cost || Extracting event price range
+2026-01-08 17:37:16 || INFO || tools.research || Searching destination info: birthday venue cost in Goa
+2026-01-08 17:37:18 || INFO || tools.research_cost || Extracted event price range:{'category': 'event', 'min_price': 180, 'max_price': 3500, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 17:37:18 || INFO || tools.research_cost || Extracting transport price range
+2026-01-08 17:37:18 || INFO || tools.research || Searching destination info: local transport cost per day in Goa
+2026-01-08 17:37:20 || INFO || tools.research_cost || Extracted transport price range:{'category': 'transport', 'min_price': 200, 'max_price': 1000, 'currency': 'INR', 'confidence': 'high'}
+2026-01-08 17:37:22 || INFO || nodes.research || Research completed successfully
+2026-01-08 17:37:22 || INFO || nodes.review || Entering review node for stage: research
+2026-01-08 17:37:29 || INFO || nodes.review || Review decision | stage=research | approved=True
+2026-01-08 17:37:29 || INFO || graph || Research approved. Moving to planner.
+2026-01-08 17:37:29 || INFO || nodes.planner || Running planner agent
+2026-01-08 17:37:29 || INFO || tools.planner || Calculated trip days: 5 days
+2026-01-08 17:37:30 || INFO || nodes.planner || Itinerary created successfully
+2026-01-08 17:37:30 || INFO || nodes.review || Entering review node for stage: planner
+2026-01-08 17:38:11 || INFO || nodes.review || Review decision | stage=planner | approved=False
+2026-01-08 17:38:11 || INFO || graph || Planner rejected. Looping back to planner.
+2026-01-08 17:38:11 || INFO || nodes.planner || Running planner agent
+2026-01-08 17:38:11 || INFO || tools.planner || Calculated trip days: 5 days
+2026-01-08 17:38:12 || INFO || nodes.planner || Itinerary created successfully
+2026-01-08 17:38:12 || INFO || nodes.review || Entering review node for stage: planner
+2026-01-08 17:38:30 || INFO || nodes.review || Review decision | stage=planner | approved=True
+2026-01-08 17:38:30 || INFO || graph || Planner approved. Moving to pricing.
+2026-01-08 17:38:30 || INFO || nodes.pricing || Running pricing agent
+2026-01-08 17:38:30 || INFO || tools.pricing || Calculated total cost: 8597
+2026-01-08 17:38:30 || INFO || tools.pricing || Applied buffer: 859
+2026-01-08 17:38:30 || INFO || tools.pricing || Identified cost risks: []
+2026-01-08 17:38:31 || INFO || nodes.pricing || Pricing completed successfully
+2026-01-08 17:38:31 || INFO || nodes.review || Entering review node for stage: pricing
+2026-01-08 17:38:56 || INFO || nodes.review || Review decision | stage=pricing | approved=True
+2026-01-08 17:38:56 || INFO || graph || Pricing approved. Assembling final trip plan.
+2026-01-08 17:38:56 || INFO || nodes.final_presenter || Running final presenter node
+2026-01-08 17:38:56 || ERROR || __main__ || Error while running Trip Event Planner
+Traceback (most recent call last):
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\main.py", line 28, in run
+    result = trip_event_graph.invoke(initial_state)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\main.py", line 3068, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\main.py", line 2643, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "E:\SSPL_Internship_Repo\Jan_05_26\Trip_Event_Planner\nodes\final_presenter.py", line 22, in final_presenter_node
+    raise ValueError("FinalTripPlanModel missing in state")
+ValueError: FinalTripPlanModel missing in state
+During task with name 'final_presenter' and id '97fb34b5-d501-9491-6e62-0426ed5e857a'
+2026-01-08 17:38:56 || INFO || __main__ || Trip Event Planner finished execution
+2026-01-08 17:58:12 || INFO || llm || Initializing Groq LLM
+2026-01-08 17:58:12 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
