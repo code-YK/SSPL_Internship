@@ -906,3 +906,5 @@ KeyError: 'user_friendly_output'
 2026-01-08 18:39:52 || INFO || nodes.final_presenter || FinalTripPlanModel missing. Assembling inside final presenter.
 2026-01-08 18:39:58 || INFO || nodes.final_presenter || Final user-friendly output generated
 2026-01-08 18:39:58 || INFO || __main__ || Trip Event Planner finished execution
+2026-01-09 18:44:43 || INFO || llm || Initializing Groq LLM
+2026-01-09 18:44:43 || INFO || llm || Groq LLM initialized | model=llama-3.3-70b-versatile | temperature=0.3
