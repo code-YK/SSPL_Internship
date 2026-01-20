@@ -1,0 +1,65 @@
+Project Title: "DocuChat" – RAG-based Document Q&A System
+
+Goal: Build a complete system where a user uploads a PDF and chats with it using AI.
+
+Tech Stack: Python, LangChain, FastAPI, Streamlit, Vector DB (ChromaDB or FAISS).
+
+Constraint: NO Jupyter Notebooks. All code must be written in modular .py files.
+
+Phase 1: Project Setup & Structure
+Objective: Learn how to set up a professional Python project structure.
+Instructions:
+Create a folder named DocuChat_Project.
+Set up a virtual environment (python -m venv venv) and activate it.
+Create a requirements.txt file (List libraries: fastapi, uvicorn, langchain, pypdf, faiss-cpu, streamlit, python-dotenv).
+Create the following folder structure (do not put everything in one file):
+Plaintext
+DocuChat_Project/
+├── app.py              # Streamlit Frontend
+├── server.py           # FastAPI Backend
+├── core/
+│   ├── __init__.py
+│   ├── rag_pipeline.py # All LangChain logic goes here
+│   └── utils.py        # Helper functions (file saving, etc.)
+├── data/               # Folder to store uploaded PDFs temporarily
+└── requirements.txt
+
+Phase 2: The Logic Layer (core/rag_pipeline.py)
+Objective: Build the RAG (Retrieval-Augmented Generation) engine strictly using functions/classes, not cells.
+Tasks:
+Document Loading: Write a function load_pdf(file_path) using LangChain’s PyPDFLoader to extract text.
+Splitting: Implement RecursiveCharacterTextSplitter to break text into chunks (e.g., chunk size 1000).
+Vector Store: Create a function create_vector_db(chunks) that:
+Takes text chunks.
+Converts them to embeddings (Use HuggingFaceEmbeddings for free usage or OpenAIEmbeddings if you have API keys).
+Stores them in a local Vector DB (FAISS or ChromaDB).
+Retrieval Chain: Create a class RAGChatBot with a method get_answer(query).
+It should retrieve the top 3 relevant chunks from the DB.
+Feed them into an LLM (use LangChain’s ChatOpenAI or HuggingFaceHub).
+Return the answer.
+
+Phase 3: The API Layer (server.py)
+Objective: Learn how to serve the ML logic via REST API.
+Tasks:
+Initialize FastAPI.
+Create an endpoint POST /upload:
+Accepts a PDF file upload.
+Saves it to the data/ folder.
+Triggers the "Vector Store" creation function from Phase 2.
+Returns: {"message": "File processed successfully"}.
+Create an endpoint POST /chat:
+Accepts a JSON body: {"question": "What is the summary of page 5?"}.
+Calls RAGChatBot.get_answer().
+Returns: {"answer": "Here is the summary..."}.
+Run the server using uvicorn server:app --reload.
+
+Phase 4: The Frontend Layer (app.py)
+Objective: Connect a frontend to the backend API (Simulating a real Full-Stack flow).
+Tasks:
+Use Streamlit to build a simple UI.
+Sidebar: Add a file uploader widget.
+When a file is uploaded, use Python's requests library to send it to the FastAPI POST /upload endpoint.
+Main Chat Area:
+Input box for the user to type a question.
+When "Send" is clicked, hit the FastAPI POST /chat endpoint.
+Display the AI's response in the chat window. 
