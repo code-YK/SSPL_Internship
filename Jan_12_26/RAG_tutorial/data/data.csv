@@ -1,0 +1,11 @@
+Project ID,Project Name,Description,Technology Stack,Team Size,Duration (Months),Status,Budget (USD)
+P001,AI Chatbot Development,An intelligent chatbot system using NLP for customer support,Python LangChain OpenAI,5,6,In Progress,50000
+P002,Data Pipeline Automation,Automated ETL pipeline for data processing and analytics,Python Pandas Apache Airflow,4,4,Completed,35000
+P003,Mobile App Redesign,Complete redesign of mobile application UI/UX,React Native TypeScript Firebase,6,8,In Progress,75000
+P004,Cloud Migration,Migrating on-premises infrastructure to AWS,AWS Terraform Docker,8,5,In Progress,120000
+P005,Machine Learning Model,Predictive analytics model for customer churn,Python Scikit-learn TensorFlow,3,3,Completed,45000
+P006,API Development,RESTful API for e-commerce platform,Node.js Express MongoDB,5,5,In Progress,55000
+P007,Security Audit,Comprehensive security assessment and vulnerability patching,Java Spring Security OWASP,4,2,Completed,40000
+P008,Database Optimization,Performance tuning and optimization of SQL databases,PostgreSQL Redis,3,3,Completed,25000
+P009,Blockchain Integration,Integration of blockchain technology for supply chain,Solidity Web3 Node.js,7,9,In Progress,180000
+P010,Business Intelligence Portal,Interactive dashboard for business analytics,Tableau Power BI Python,5,4,In Progress,60000
