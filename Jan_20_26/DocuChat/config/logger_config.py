@@ -1,7 +1,7 @@
 import logging
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
-from config.settings import settings
+from config.settings import debug
 
 # Log directory & file
 LOG_DIR = Path(__file__).parent.parent / "logs"
@@ -13,7 +13,7 @@ def setup_logger(name: str) -> logging.Logger:
 
     logger = logging.getLogger(name)
 
-    log_level = logging.DEBUG if settings.debug else logging.INFO
+    log_level = logging.DEBUG if debug else logging.INFO
     logger.setLevel(log_level)
 
     # Prevent duplicate handlers on re-import
