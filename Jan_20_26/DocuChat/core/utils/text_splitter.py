@@ -1,8 +1,9 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
 from typing import List
 
-def split_text(text: str, chunk_size: int = 1000, chunk_overlap: int = 200) -> List[str]:
-    '''Split the input text into smaller chunks using RecursiveCharacterTextSplitter.'''
+def split_text(documents: List[Document], chunk_size: int = 1000, chunk_overlap: int = 200) -> List[Document]:
+    '''Split the input documents into smaller chunks using RecursiveCharacterTextSplitter.'''
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
@@ -10,6 +11,5 @@ def split_text(text: str, chunk_size: int = 1000, chunk_overlap: int = 200) -> L
         separators=["\n\n", "\n", " ", ""]
     )
 
-    chunks = text_splitter.split_text(text)
+    chunks = text_splitter.split_documents(documents)
     return chunks
-
