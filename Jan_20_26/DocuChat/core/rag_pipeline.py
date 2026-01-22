@@ -42,30 +42,20 @@ class RAGPipeline:
             # Build document context
             context = "\n".join(d.page_content for d in docs)
 
-            # Build full prompt with memory + context
-            full_prompt = f"""
-    You are a document-based assistant.
+            # Format prompt using YOUR template
+            prompt = PROMPT_TEMPLATE.format(
+                context=context,
+                question=query,
+                chat_history=chat_history
+            )
 
-    Conversation so far:
-    {chat_history}
-
-    Document context:
-    {context}
-
-    User question:
-    {query}
-
-    Answer:
-    """
             # Invoke LLM
-            response = self.llm.invoke(full_prompt)
-
+            response = self.llm.invoke(prompt)
             return response.content
 
         except Exception as e:
             logger.error(f"Error in chat processing: {e}")
             raise
-
 
 if __name__ == "__main__":
     rag_pipeline = RAGPipeline()
