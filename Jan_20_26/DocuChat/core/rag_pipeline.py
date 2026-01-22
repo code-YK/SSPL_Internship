@@ -25,17 +25,43 @@ class RAGPipeline:
             logger.error(f"Error ingesting PDF: {e}")
             raise
 
-    def chat(self, query: str) -> str:
-        '''Given a user query, 
-        retrieve relevant documents and generate a response using the LLM.'''
+    def chat(self, query: str, chat_history: str = "") -> str:
+        """
+        Given a user query and optional chat history,
+        retrieve relevant documents and generate a response using the LLM.
+        """
         logger.info(f"Processing query: {query}")
+
         try:
             if not self.vector_store:
                 raise ValueError("No document uploaded yet")
+
+            # Retrieve relevant document chunks
             docs = retrieve_similar_documents(self.vector_store, query)
+
+            # Build document context
             context = "\n".join(d.page_content for d in docs)
-            prompt = PROMPT_TEMPLATE.format(context=context, question=query)
-            return self.llm.invoke(prompt).content
+
+            # Build full prompt with memory + context
+            full_prompt = f"""
+    You are a document-based assistant.
+
+    Conversation so far:
+    {chat_history}
+
+    Document context:
+    {context}
+
+    User question:
+    {query}
+
+    Answer:
+    """
+            # Invoke LLM
+            response = self.llm.invoke(full_prompt)
+
+            return response.content
+
         except Exception as e:
             logger.error(f"Error in chat processing: {e}")
             raise
