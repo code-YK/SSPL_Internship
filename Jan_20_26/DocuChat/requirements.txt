@@ -9,3 +9,4 @@ faiss-cpu
 fastapi
 uvicorn
 requests
+streamlit
